@@ -106,9 +106,30 @@ public class Menu {
     SetDate.resize(150, 60);
     image(SetDate, 730, 760);
     
-//    changeFace.resize(150, 60);
-//    image(changeFace, (width/2 + radius/2 - 150), 760);
-
+    StopWatch.resize(150, 60);
+    image(StopWatch, 220, 880);
+    
+    StopWatch_Start.resize(150, 60);
+    image(StopWatch_Start, 390, 880);
+    
+    StopWatch_Stop.resize(150, 60);
+    image(StopWatch_Stop, 560, 880);
+    
+    StopWatch_Reset.resize(150, 60);
+    image(StopWatch_Reset, 730, 880);
+    
+    //
+    Timer.resize(150, 60);
+    image(Timer, 220, 1000);
+    
+    SetTimer.resize(150, 60);
+    image(SetTimer, 390, 1000);
+    
+    Timer_Start.resize(150, 60);
+    image(StopWatch_Stop, 560, 1000);
+    
+    Timer_Stop.resize(150, 60);
+    image(StopWatch_Reset, 730, 1000);
 
   }
 
