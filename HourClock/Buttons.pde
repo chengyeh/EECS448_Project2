@@ -88,7 +88,7 @@ void update(int x, int y) {
      overZoomIn= false;
      overZoomOut= false;
   }
-  else if (overZoomIn(1040, 0, 60, 60) ){
+  else if (overZoomIn(945, 290, 60, 60) ){
     /** set everything to false if not on button */
     overChangeMode = false;
     overChangeTime = false;
@@ -96,7 +96,7 @@ void update(int x, int y) {
     overZoomIn= true;
     overZoomOut= false;
   }
-  else if (overZoomOut(1040, 70, 60, 60) ){
+  else if (overZoomOut(945, 360, 60, 60) ){
     /** set everything to false if not on button */
     overChangeMode = false;
     overChangeTime = false;
