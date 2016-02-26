@@ -15,6 +15,7 @@ public class ClockFace {
   int m_xpos;
   int m_ypos;
   int m_radius;
+  
   /** 
     @pre none
     @post none
@@ -35,6 +36,9 @@ public class ClockFace {
     /** load picture with 1-12 clockface */
      PImage hands12;
      hands12 = loadImage("hands12.png");
+    int shifts= (600-radius)/2;
+     
+     
      
      /** check which face the user desires, load image accordingly */
      if(cDesigns == clockDesigns.BLACK) { hands12 = loadImage("hands12.png"); }
@@ -47,7 +51,7 @@ public class ClockFace {
      /** resize photo to size of clock and move
      to same location as clock */
      hands12.resize(radius, radius);
-     image(hands12, 200, 50);
+     image(hands12, 250+shifts, 50+shifts);
     
   }
 
@@ -59,6 +63,7 @@ public class ClockFace {
   public void display24Hour(int radius, clockDesigns cDesigns) {
     /** load picture with 1-24 clockface */
     PImage hands24;
+    int shifts= (600-radius)/2;
     hands24 = loadImage("hands24.png");
     
      /** check which face the user desires, load image accordingly */
@@ -71,7 +76,7 @@ public class ClockFace {
     /** resize photo to size of clock and move
     to same location as clock */
     hands24.resize(radius, radius);
-    image(hands24, 200, 50);
+    image(hands24, 250+shifts, 50+shifts);
 
   }
 
@@ -83,8 +88,10 @@ public class ClockFace {
   public void display12Hands(int radius, clockDesigns cDesigns) {
 
     /** Origin of the clock */
-    float centerX = width/2;
-    float centerY = height/2 - 43;
+    float centerX = 550;
+    float centerY = 350;
+    float xAdjust=0;
+    float yAdjust=0;
 
     /** coorelates time (seconds, minutes, hours) to radians)
     Subtract 1/2 PI so that 12 pm starts at 90 degrees instead of at 0 degrees (3 pm)
@@ -127,10 +134,10 @@ public class ClockFace {
   public void display24Hands(int radius, clockDesigns cDesigns) {
 
     /** Origin of the clock */
-    float centerX = width/2;
-    float centerY = height/2;
+    float centerX = 550;
+    float centerY = 350;
     float xAdjust= 0;
-    float yadjust= 0;
+    float yAdjust= 0;
     /** The corresponding radius of each hand */
     float sRad = radius * .4;
     float mRad = radius * .3;

@@ -43,7 +43,17 @@ public class Menu {
     PImage switchTo24;
     PImage changeTime;
     PImage changeFace;
-    PImage EnterDate;
+    PImage SetDate;
+    PImage Clock;
+    PImage StopWatch;
+    PImage StopWatch_Reset;
+    PImage StopWatch_Start;
+    PImage StopWatch_Stop;
+    PImage SetTimer;
+    PImage Timer;
+    PImage Timer_Start;
+    PImage Timer_Stop;
+ 
 
     switchTo12 = loadImage("switchTo12.png");
     switchTo24 = loadImage("switchTo24.png");
@@ -53,8 +63,20 @@ public class Menu {
 
     //EnterDate.resize(150, 60);
     //image(EnterDate, 0, 0);
+    SetDate  = loadImage("SetDate.png");
+    Clock = loadImage("Clock.png");
+    StopWatch = loadImage("StopWatch.png");
+    StopWatch_Reset = loadImage("StopWatch_Reset.png");
+    StopWatch_Start = loadImage("StopWatch_Start.png");
+    StopWatch_Stop = loadImage("StopWatch_Stop.png");
+    SetTimer = loadImage("SetTimer.png");
+    Timer = loadImage("Timer.png");
+    Timer_Start = loadImage("Timer_Start.png");
+    Timer_Stop = loadImage("Timer_Stop.png");
+ 
+    //SetDate.resize(150, 60);
+    //image(SetDate, 0, 0);
     
-
     if (getView()){
       switchTo24.resize(150, 60);
       image(switchTo24, (width/2 - 75), 600);
