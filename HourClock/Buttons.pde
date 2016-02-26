@@ -61,7 +61,7 @@ void mousePressed() {
 *  @return none
 */
 void update(int x, int y) {
-  if ( overChangeMode((width/2 - 75), 760, 150, 60) ) {
+  if ( overChangeMode(560, 760, 150, 60) ) {
      /** set overChangeMode true if button was pressed */
     overChangeMode = true;
     overChangeTime = false;
@@ -70,7 +70,7 @@ void update(int x, int y) {
     overZoomOut= false;
   }
 
-  else if (overChangeTime((radius / 2), 760, 150, 60) ){
+  else if (overChangeTime(390, 760, 150, 60) ){
      /** set changeTime true if button was pressed */
      overChangeMode = false;
      overChangeTime = true;
@@ -78,7 +78,7 @@ void update(int x, int y) {
      overZoomIn= false;
      overZoomOut= false;
   }
-  else if (overChangeFace((width/2 + radius/2 - 150), 760, 150, 60) ){
+  else if (overChangeFace(730, 760, 150, 60) ){
      /** set changeFace true if button was pressed */
      overChangeMode = false;
      overChangeTime = false;
