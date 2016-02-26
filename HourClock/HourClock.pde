@@ -44,7 +44,7 @@ void draw() {
     update(mouseX, mouseY);
     background(255);
 
-    radius = 600;
+    radius = clock.getRadius();
 
     /** Check if clock rolls over from AM/PM */
     seconds = second() + secDiff;

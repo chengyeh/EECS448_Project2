@@ -15,7 +15,7 @@ public class ClockFace {
   int m_xpos;
   int m_ypos;
   int m_radius;
-  
+  int c_radius=600;
   /** 
     @pre none
     @post none
@@ -31,6 +31,38 @@ public class ClockFace {
     @post displays valid 12 hour clock face
     @return none
   */
+  
+  public int getRadius()
+  {
+    return c_radius;
+  }
+  
+  public void addRadius(int radius)
+  {
+    if(radius==600)
+    {
+      radius=600;
+    }
+    else
+    {
+      radius=radius+50;
+    }
+      
+  }
+  
+  public void subRadius(int radius)
+  {
+    if(radius==300)
+    {
+      radius=300;
+    }
+    else
+    {
+      radius=radius-50;
+    }
+      
+  }
+  
   public void display12Hour(int radius, clockDesigns cDesigns) {
 
     /** load picture with 1-12 clockface */

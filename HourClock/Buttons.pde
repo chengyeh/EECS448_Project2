@@ -49,9 +49,11 @@ void mousePressed() {
   }
   if(overZoomIn){
       //increase radius
+      clock.addRadius(radius);
   }
   if(overZoomOut){
      //decrease radius 
+     clock.subRadius(radius);
   }
 }
 
