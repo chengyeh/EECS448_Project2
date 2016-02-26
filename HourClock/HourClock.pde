@@ -42,7 +42,7 @@ void setup() {
 void draw() {
     update(mouseX, mouseY);
     background(255);
-    radius = 500;
+    radius = 700;
     
     /** Check if clock rolls over from AM/PM */
     seconds = second() + secDiff;
@@ -70,12 +70,12 @@ void draw() {
 
     /** Repeatedly prints the clock and its hands as they tick (12 & 24 mode) */
     if (mainMenu.getView()) {
-        clock.display12Hour(width,height,radius, currentDesign);
+        clock.display12Hour(radius, currentDesign);
         clock.displayAMPM(radius, currentDesign);
         clock.display12Hands(radius, currentDesign);
     }
     else {
-        clock.display24Hour(width,height,radius, currentDesign);
+        clock.display24Hour(radius, currentDesign);
         clock.display24Hands(radius, currentDesign);
     }
 
