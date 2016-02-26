@@ -42,7 +42,7 @@ void setup() {
 void draw() {
     update(mouseX, mouseY);
     background(255);
-    radius = 700;
+    radius = 600;
     
     /** Check if clock rolls over from AM/PM */
     seconds = second() + secDiff;

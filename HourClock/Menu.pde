@@ -51,8 +51,8 @@ public class Menu {
     changeFace = loadImage("switchFace.png");
     EnterDate  = loadImage("EnterDate.png");
 
-    EnterDate.resize(150, 60);
-    image(EnterDate, 0, 0);
+    //EnterDate.resize(150, 60);
+    //image(EnterDate, 0, 0);
     
 
     if (getView()){
