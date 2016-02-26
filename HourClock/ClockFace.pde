@@ -15,7 +15,6 @@ public class ClockFace {
   int m_xpos;
   int m_ypos;
   int m_radius;
-
   /** 
     @pre none
     @post none
@@ -31,7 +30,7 @@ public class ClockFace {
     @post displays valid 12 hour clock face
     @return none
   */
-  public void display12Hour(int xpos, int ypos, int radius, clockDesigns cDesigns) {
+  public void display12Hour(int radius, clockDesigns cDesigns) {
 
     /** load picture with 1-12 clockface */
      PImage hands12;
@@ -57,7 +56,7 @@ public class ClockFace {
     @post displays valid 24 hour clock face
     @return none
   */
-  public void display24Hour(int xpos, int ypos, int radius, clockDesigns cDesigns) {
+  public void display24Hour(int radius, clockDesigns cDesigns) {
     /** load picture with 1-24 clockface */
     PImage hands24;
     hands24 = loadImage("hands24.png");
