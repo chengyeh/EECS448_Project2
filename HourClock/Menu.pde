@@ -80,23 +80,23 @@ public class Menu {
     image(Minus, 1040, 70);
 
     Clock.resize(150, 60);
-    image(Clock, 200, 760);
+    image(Clock, 220, 760);
 
     changeTime.resize(150, 60);
-    image(changeTime, (radius/2), 760);
+    image(changeTime, 390, 760);
 
     if (getView()){
       switchTo24.resize(150, 60);
-      image(switchTo24, (width/2 - 80), 760);
+      image(switchTo24, 560, 760);
 
     }
     else{
       switchTo12.resize(150, 60);
-      image(switchTo12, (width/2 - 75), 760);
+      image(switchTo12, 560, 760);
     }
 
     SetDate.resize(150, 60);
-    image(SetDate, (width/2 + radius/2 - 150), 760);
+    image(SetDate, 730, 760);
     
 //    changeFace.resize(150, 60);
 //    image(changeFace, (width/2 + radius/2 - 150), 760);
