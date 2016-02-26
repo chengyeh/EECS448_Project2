@@ -17,7 +17,7 @@ int j = 1;
 
 void setup() {
 
-  size(1100, 1120);
+  size(1100, 1210);
   fill(255);
   mainMenu = new Menu();
   clock = new ClockFace();
