@@ -75,10 +75,10 @@ public class Menu {
     Minus = loadImage("MINUS.png");
     
     Plus.resize(60, 60);
-    image(Plus, 1040, 290);
+    image(Plus, 945, 290);
     
     Minus.resize(60, 60);
-    image(Minus, 1040, 360);
+    image(Minus, 945, 360);
 
     Clock.resize(150, 60);
     image(Clock, 220, 760);
