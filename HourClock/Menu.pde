@@ -44,7 +44,7 @@ public class Menu {
     PImage changeTime;
     PImage changeFace;
     PImage SetDate;
-    PImage Clock;
+    PImage ClockButton;
     PImage StopWatch;
     PImage StopWatch_Reset;
     PImage StopWatch_Start;
@@ -61,7 +61,7 @@ public class Menu {
     changeTime = loadImage("changeTime.png");
     changeFace = loadImage("switchFace.png");
     SetDate  = loadImage("SetDate.png");
-    Clock = loadImage("Clock.png");
+    ClockButton = loadImage("Clock.png");
     StopWatch = loadImage("StopWatch.png");
     StopWatch_Reset = loadImage("StopWatch_Reset.png");
     StopWatch_Start = loadImage("StopWatch_Start.png");
@@ -80,8 +80,8 @@ public class Menu {
     Minus.resize(60, 60);
     image(Minus, 945, 360);
 
-    Clock.resize(150, 60);
-    image(Clock, 220, 760);
+    ClockButton.resize(150, 60);
+    image(ClockButton, 220, 760);
 
     changeTime.resize(150, 60);
     image(changeTime, 390, 760);
@@ -100,29 +100,28 @@ public class Menu {
     image(SetDate, 730, 760);
     
     StopWatch.resize(150, 60);
-    image(StopWatch, 220, 880);
+    image(StopWatch, 220, 850);
     
     StopWatch_Start.resize(150, 60);
-    image(StopWatch_Start, 390, 880);
+    image(StopWatch_Start, 390, 850);
     
     StopWatch_Stop.resize(150, 60);
-    image(StopWatch_Stop, 560, 880);
+    image(StopWatch_Stop, 560, 850);
     
     StopWatch_Reset.resize(150, 60);
-    image(StopWatch_Reset, 730, 880);
+    image(StopWatch_Reset, 730, 850);
     
-    //
     Timer.resize(150, 60);
-    image(Timer, 220, 1000);
+    image(Timer, 220, 940);
     
     SetTimer.resize(150, 60);
-    image(SetTimer, 390, 1000);
+    image(SetTimer, 390, 940);
     
     Timer_Start.resize(150, 60);
-    image(StopWatch_Stop, 560, 1000);
+    image(StopWatch_Stop, 560, 940);
     
     Timer_Stop.resize(150, 60);
-    image(StopWatch_Reset, 730, 1000);
+    image(StopWatch_Reset, 730, 940);
 
   }
 
