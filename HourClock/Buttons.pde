@@ -7,7 +7,8 @@
 boolean overChangeMode = false;
 boolean overChangeTime = false;
 boolean overChangeFace = false;
-
+boolean overZoomIn=false;
+boolean overZoomOut=false;
 int index = 1;
 clockDesigns currentDesign;
 
@@ -46,6 +47,12 @@ void mousePressed() {
       index = 0;
     }
   }
+  if(overZoomIn){
+      //increase radius
+  }
+  if(overZoomOut){
+     //decrease radius 
+  }
 }
 
 /**
@@ -59,6 +66,8 @@ void update(int x, int y) {
     overChangeMode = true;
     overChangeTime = false;
     overChangeFace = false;
+    overZoomIn= false;
+    overZoomOut= false;
   }
 
   else if (overChangeTime((radius / 2), 760, 150, 60) ){
@@ -66,18 +75,40 @@ void update(int x, int y) {
      overChangeMode = false;
      overChangeTime = true;
      overChangeFace = false;
+     overZoomIn= false;
+     overZoomOut= false;
   }
   else if (overChangeFace((width/2 + radius/2 - 150), 760, 150, 60) ){
      /** set changeFace true if button was pressed */
      overChangeMode = false;
      overChangeTime = false;
      overChangeFace = true;
+     overZoomIn= false;
+     overZoomOut= false;
+  }
+  else if (overZoomIn(1040, 0, 60, 60) ){
+    /** set everything to false if not on button */
+    overChangeMode = false;
+    overChangeTime = false;
+    overChangeFace = false;
+    overZoomIn= true;
+    overZoomOut= false;
+  }
+  else if (overZoomOut(1040, 70, 60, 60) ){
+    /** set everything to false if not on button */
+    overChangeMode = false;
+    overChangeTime = false;
+    overChangeFace = false;
+    overZoomIn= false;
+    overZoomOut= true;
   }
   else {
     /** set everything to false if not on button */
     overChangeMode = false;
     overChangeTime = false;
     overChangeFace = false;
+    overZoomIn= false;
+    overZoomOut= false;
   }
 }
 
@@ -121,6 +152,24 @@ boolean overChangeTime(int x, int y, int width, int height)  {
 boolean overChangeFace(int x, int y, int width, int height)  {
 
   /** checks if mouse clicks changeFace button */
+  if (mouseX >= x && mouseX <= x+width &&
+      mouseY >= y && mouseY <= y+height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+boolean overZoomIn(int x, int y, int width, int height) {
+  if (mouseX >= x && mouseX <= x+width &&
+      mouseY >= y && mouseY <= y+height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+boolean overZoomOut(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
     return true;
