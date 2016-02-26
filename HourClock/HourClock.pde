@@ -74,14 +74,14 @@ void draw() {
     /** Repeatedly prints the clock and its hands as they tick (12 & 24 mode) */
     if (mainMenu.getView()) {
 
-        clock.display12Hour(radius, currentDesign);
-        clock.displayAMPM(radius, currentDesign);
-        clock.display12Hands(radius, currentDesign);
+        clock.display12Hour(clock.getRadius(), currentDesign);
+        clock.displayAMPM(clock.getRadius(), currentDesign);
+        clock.display12Hands(clock.getRadius(), currentDesign);
     }
     else {
 
-        clock.display24Hour(radius, currentDesign);
-        clock.display24Hands(radius, currentDesign);
+        clock.display24Hour(clock.getRadius(), currentDesign);
+        clock.display24Hands(clock.getRadius(), currentDesign);
     }
 
 }

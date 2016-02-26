@@ -37,28 +37,28 @@ public class ClockFace {
     return c_radius;
   }
   
-  public void addRadius(int radius)
+  public void addRadius()
   {
-    if(radius==600)
+    if(c_radius==600)
     {
-      radius=600;
+      c_radius=600;
     }
     else
     {
-      radius=radius+50;
+      c_radius=radius+50;
     }
       
   }
   
-  public void subRadius(int radius)
+  public void subRadius()
   {
-    if(radius==300)
+    if(c_radius==300)
     {
-      radius=300;
+      c_radius=300;
     }
     else
     {
-      radius=radius-50;
+      c_radius=radius-50;
     }
       
   }
