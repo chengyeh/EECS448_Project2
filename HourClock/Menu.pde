@@ -43,12 +43,17 @@ public class Menu {
     PImage switchTo24;
     PImage changeTime;
     PImage changeFace;
+    PImage EnterDate;
 
     switchTo12 = loadImage("switchTo12.png");
     switchTo24 = loadImage("switchTo24.png");
     changeTime = loadImage("changeTime.png");
     changeFace = loadImage("switchFace.png");
+    EnterDate  = loadImage("EnterDate.png");
 
+    EnterDate.resize(150, 60);
+    image(EnterDate, 0, 0);
+    
 
     if (getView()){
       switchTo24.resize(150, 60);
