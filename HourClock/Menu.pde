@@ -60,10 +60,6 @@ public class Menu {
     switchTo24 = loadImage("switchTo24.png");
     changeTime = loadImage("changeTime.png");
     changeFace = loadImage("switchFace.png");
-    //EnterDate  = loadImage("EnterDate.png");
-
-    //EnterDate.resize(150, 60);
-    //image(EnterDate, 0, 0);
     SetDate  = loadImage("SetDate.png");
     Clock = loadImage("Clock.png");
     StopWatch = loadImage("StopWatch.png");
@@ -74,18 +70,15 @@ public class Menu {
     Timer = loadImage("Timer.png");
     Timer_Start = loadImage("Timer_Start.png");
     Timer_Stop = loadImage("Timer_Stop.png");
- 
-    //SetDate.resize(150, 60);
-    //image(SetDate, 0, 0);
     
     Plus = loadImage("PLUS.png");
     Minus = loadImage("MINUS.png");
     
     Plus.resize(60, 60);
-    image(Plus, 1040, 0);
+    image(Plus, 1040, 290);
     
     Minus.resize(60, 60);
-    image(Minus, 1040, 70);
+    image(Minus, 1040, 360);
 
     Clock.resize(150, 60);
     image(Clock, 220, 760);
