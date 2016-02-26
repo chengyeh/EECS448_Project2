@@ -35,6 +35,9 @@ public class ClockFace {
     /** load picture with 1-12 clockface */
      PImage hands12;
      hands12 = loadImage("hands12.png");
+    
+     
+     
      
      /** check which face the user desires, load image accordingly */
      if(cDesigns == clockDesigns.BLACK) { hands12 = loadImage("hands12.png"); }
@@ -47,7 +50,7 @@ public class ClockFace {
      /** resize photo to size of clock and move
      to same location as clock */
      hands12.resize(radius, radius);
-     image(hands12, 250, 60);
+     image(hands12, 200, 50);
     
   }
 
@@ -71,7 +74,7 @@ public class ClockFace {
     /** resize photo to size of clock and move
     to same location as clock */
     hands24.resize(radius, radius);
-    image(hands24, 250, 60);
+    image(hands24, 200, 50);
 
   }
 

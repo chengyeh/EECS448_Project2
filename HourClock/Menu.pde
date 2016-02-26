@@ -70,9 +70,8 @@ public class Menu {
     Timer_Start = loadImage("Timer_Start.png");
     Timer_Stop = loadImage("Timer_Stop.png");
  
-    SetDate.resize(150, 60);
-    image(SetDate, 0, 0);
-    
+    //SetDate.resize(150, 60);
+    //image(SetDate, 0, 0);
 
     if (getView()){
       switchTo24.resize(150, 60);
