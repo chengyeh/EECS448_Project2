@@ -53,7 +53,8 @@ public class Menu {
     PImage Timer;
     PImage Timer_Start;
     PImage Timer_Stop;
- 
+    PImage Plus;
+    PImage Minus;
 
     switchTo12 = loadImage("switchTo12.png");
     switchTo24 = loadImage("switchTo24.png");
@@ -69,6 +70,20 @@ public class Menu {
     Timer = loadImage("Timer.png");
     Timer_Start = loadImage("Timer_Start.png");
     Timer_Stop = loadImage("Timer_Stop.png");
+    Plus = loadImage("PLUS.png");
+    Minus = loadImage("MINUS.png");
+    
+    Plus.resize(60, 60);
+    image(Plus, 1040, 0);
+    
+    Minus.resize(60, 60);
+    image(Minus, 1040, 70);
+
+    Clock.resize(150, 60);
+    image(Clock, 200, 760);
+
+    changeTime.resize(150, 60);
+    image(changeTime, (radius/2), 760);
 
     if (getView()){
       switchTo24.resize(150, 60);
@@ -80,17 +95,12 @@ public class Menu {
       image(switchTo12, (width/2 - 75), 760);
     }
 
-    changeTime.resize(150, 60);
-    image(changeTime, (radius/2), 760);
-
-//    changeFace.resize(150, 60);
-//    image(changeFace, (width/2 + radius/2 - 150), 760);
-    
     SetDate.resize(150, 60);
     image(SetDate, (width/2 + radius/2 - 150), 760);
     
-    Clock.resize(150, 60);
-    image(Clock, 200, 760);
+//    changeFace.resize(150, 60);
+//    image(changeFace, (width/2 + radius/2 - 150), 760);
+
 
   }
 
