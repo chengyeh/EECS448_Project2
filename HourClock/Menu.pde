@@ -71,6 +71,7 @@ public class Menu {
     Timer_Start = loadImage("Timer_Start.png");
     Timer_Stop = loadImage("Timer_Stop.png");
     
+    //Position the buttons
     Plus = loadImage("PLUS.png");
     Minus = loadImage("MINUS.png");
     
