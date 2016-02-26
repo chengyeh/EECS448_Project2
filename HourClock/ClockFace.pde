@@ -47,7 +47,7 @@ public class ClockFace {
      /** resize photo to size of clock and move
      to same location as clock */
      hands12.resize(radius, radius);
-     image(hands12, 250, 60);
+     image(hands12, 200, 50);
     
   }
 
@@ -71,7 +71,7 @@ public class ClockFace {
     /** resize photo to size of clock and move
     to same location as clock */
     hands24.resize(radius, radius);
-    image(hands24, 250, 60);
+    image(hands24, 200, 50);
 
   }
 
@@ -128,8 +128,9 @@ public class ClockFace {
 
     /** Origin of the clock */
     float centerX = width/2;
-    float centerY = height/2 - 43;
-
+    float centerY = height/2;
+    float xAdjust= 0;
+    float yadjust= 0;
     /** The corresponding radius of each hand */
     float sRad = radius * .4;
     float mRad = radius * .3;
