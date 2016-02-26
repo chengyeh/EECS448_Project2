@@ -69,25 +69,28 @@ public class Menu {
     Timer = loadImage("Timer.png");
     Timer_Start = loadImage("Timer_Start.png");
     Timer_Stop = loadImage("Timer_Stop.png");
- 
-    //SetDate.resize(150, 60);
-    //image(SetDate, 0, 0);
 
     if (getView()){
       switchTo24.resize(150, 60);
-      image(switchTo24, (width/2 - 75), 600);
+      image(switchTo24, (width/2 - 80), 760);
 
     }
     else{
       switchTo12.resize(150, 60);
-      image(switchTo12, (width/2 - 75), 600);
+      image(switchTo12, (width/2 - 75), 760);
     }
 
     changeTime.resize(150, 60);
-    image(changeTime, (radius/2), 600);
+    image(changeTime, (radius/2), 760);
 
-    changeFace.resize(150, 60);
-    image(changeFace, (width/2 + radius/2 - 150), 600);
+//    changeFace.resize(150, 60);
+//    image(changeFace, (width/2 + radius/2 - 150), 760);
+    
+    SetDate.resize(150, 60);
+    image(SetDate, (width/2 + radius/2 - 150), 760);
+    
+    Clock.resize(150, 60);
+    image(Clock, 200, 760);
 
   }
 
