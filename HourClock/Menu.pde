@@ -55,6 +55,13 @@ public class Menu {
     PImage Timer_Stop;
     PImage Plus;
     PImage Minus;
+    PImage Mon;
+    PImage Tue;
+    PImage Wed;
+    PImage Thu;
+    PImage Fri;
+    PImage Sat;
+    PImage Sun;
 
     switchTo12 = loadImage("switchTo12.png");
     switchTo24 = loadImage("switchTo24.png");
@@ -70,11 +77,17 @@ public class Menu {
     Timer = loadImage("Timer.png");
     Timer_Start = loadImage("Timer_Start.png");
     Timer_Stop = loadImage("Timer_Stop.png");
-    
-    //Position the buttons
     Plus = loadImage("PLUS.png");
     Minus = loadImage("MINUS.png");
+    Mon = loadImage("MON.png");
+    Tue = loadImage("TUE.png");
+    Wed = loadImage("WED.png");
+    Thu = loadImage("THU.png");
+    Fri = loadImage("FRI.png");
+    Sat = loadImage("SAT.png");
+    Sun = loadImage("SUN.png");
     
+    //Position the buttons
     Plus.resize(60, 60);
     image(Plus, 945, 290);
     
@@ -90,7 +103,6 @@ public class Menu {
     if (getView()){
       switchTo24.resize(150, 60);
       image(switchTo24, 560, 760);
-
     }
     else{
       switchTo12.resize(150, 60);
@@ -115,14 +127,54 @@ public class Menu {
     Timer.resize(150, 60);
     image(Timer, 220, 940);
     
-    SetTimer.resize(150, 60);
-    image(SetTimer, 390, 940);
-    
     Timer_Start.resize(150, 60);
-    image(StopWatch_Stop, 560, 940);
+    image(Timer_Start, 390, 940);
     
     Timer_Stop.resize(150, 60);
-    image(StopWatch_Reset, 730, 940);
+    image(Timer_Stop, 560, 940);
+    
+    SetTimer.resize(150, 60);
+    image(SetTimer, 730, 940);
+    
+    Sun.resize(90, 60);
+    image(Sun, 95, 320);
+    
+    //if(getDay() == 1)
+    //{
+    //  Sun.resize(90, 60);
+    //  image(Sun, 95, 320);
+    //}
+    //else if(getDay() == 2)
+    //{
+    //  Mon.resize(90, 60);
+    //  image(Mon, 95, 320);
+    //}
+    //else if(getDay() == 3)
+    //{
+    //  Tue.resize(90, 60);
+    //  image(Tue, 95, 320);
+    //}
+    //else if(getDay() == 4)
+    //{
+    //  Wed.resize(90, 60);
+    //  image(Wed, 95, 320);
+    //}
+    //else if(getDay() == 5)
+    //{
+    //  Thu.resize(90, 60);
+    //  image(Thu, 95, 320);
+    //}
+    //else if(getDay() == 6)
+    //{
+    //  Fri.resize(90, 60);
+    //  image(Fri, 95, 320);
+    //}
+    //else if(getDay() == 7)
+    //{
+    //  Sat.resize(90, 60);
+    //  image(Sat, 95, 320);
+    //}
+
 
   }
 
