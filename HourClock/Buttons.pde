@@ -4,11 +4,13 @@
 * @author Ashley Hutton, Hannah Johnson, Rabel Marte
 */
 
-boolean overChangeMode = false;
-boolean overChangeTime = false;
-boolean overChangeFace = false;
-boolean overZoomIn=false;
-boolean overZoomOut=false;
+boolean overChangeMode  = false;
+boolean overChangeTime  = false;
+boolean overChangeFace  = false;
+boolean overZoomIn      = false;
+boolean overZoomOut     = false;
+boolean overSetDate     = false;
+
 int index = 1;
 clockDesigns currentDesign;
 
@@ -55,6 +57,10 @@ void mousePressed() {
      //decrease radius 
      clock.subRadius();
   }
+  if(overSetDate){
+     //set date  
+     date.setDateDialog();
+  }
 }
 
 /**
@@ -70,6 +76,7 @@ void update(int x, int y) {
     overChangeFace = false;
     overZoomIn= false;
     overZoomOut= false;
+    overSetDate = false;
   }
 
   else if (overChangeTime(390, 760, 150, 60) ){
@@ -79,15 +86,17 @@ void update(int x, int y) {
      overChangeFace = false;
      overZoomIn= false;
      overZoomOut= false;
+     overSetDate = false;
   }
-  else if (overChangeFace(730, 760, 150, 60) ){
-     /** set changeFace true if button was pressed */
-     overChangeMode = false;
-     overChangeTime = false;
-     overChangeFace = true;
-     overZoomIn= false;
-     overZoomOut= false;
-  }
+  //else if (overChangeFace(730, 760, 150, 60) ){
+  //   /** set changeFace true if button was pressed */
+  //   overChangeMode = false;
+  //   overChangeTime = false;
+  //   overChangeFace = true;
+  //   overZoomIn= false;
+  //   overZoomOut= false;
+  //   overSetDate = false;
+  //}
   else if (overZoomIn(945, 290, 60, 60) ){
     /** set everything to false if not on button */
     overChangeMode = false;
@@ -95,6 +104,7 @@ void update(int x, int y) {
     overChangeFace = false;
     overZoomIn= true;
     overZoomOut= false;
+    overSetDate = false;
   }
   else if (overZoomOut(945, 360, 60, 60) ){
     /** set everything to false if not on button */
@@ -103,6 +113,16 @@ void update(int x, int y) {
     overChangeFace = false;
     overZoomIn= false;
     overZoomOut= true;
+    overSetDate = false;
+  }
+  else if (overSetDate(730, 760, 150, 60) ){
+    /** set everything to false if not on button */
+    overChangeMode = false;
+    overChangeTime = false;
+    overChangeFace = false;
+    overZoomIn= false;
+    overZoomOut= false;
+    overSetDate = true;
   }
   else {
     /** set everything to false if not on button */
@@ -111,6 +131,7 @@ void update(int x, int y) {
     overChangeFace = false;
     overZoomIn= false;
     overZoomOut= false;
+    overSetDate = false;
   }
 }
 
@@ -172,6 +193,15 @@ boolean overZoomIn(int x, int y, int width, int height) {
 }
 
 boolean overZoomOut(int x, int y, int width, int height) {
+  if (mouseX >= x && mouseX <= x+width &&
+      mouseY >= y && mouseY <= y+height) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+boolean overSetDate(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
     return true;

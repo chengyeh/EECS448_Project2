@@ -6,7 +6,7 @@
 
 Menu mainMenu;
 ClockFace clock;
-CalendarInput setDateInput;
+DateCalendar date;
 int radius;
 
 int seconds = 0;
@@ -22,7 +22,7 @@ void setup() {
   fill(255);
   mainMenu = new Menu();
   clock = new ClockFace();
-  setDateInput = new CalendarInput();
+  date = new DateCalendar();
     
   mainMenu.toggleView();
 
@@ -62,7 +62,6 @@ void draw() {
     }
 
     mainMenu.displayMenu();
-    //setDateInput.setDateDisplay();
     
     if (hours >= 12){           
       mainMenu.setTimeOfDay(false);
