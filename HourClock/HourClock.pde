@@ -7,6 +7,7 @@
 Menu mainMenu;
 ClockFace clock;
 DateCalendar date;
+Timer timer;
 int radius;
 
 int seconds = 0;
@@ -20,9 +21,11 @@ void setup() {
 
   size(1100, 1120);
   fill(255);
+  
   mainMenu = new Menu();
   clock = new ClockFace();
   date = new DateCalendar();
+  timer = new Timer();
     
   mainMenu.toggleView();
 
