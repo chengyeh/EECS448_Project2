@@ -34,7 +34,7 @@ clockDesigns currentDesign;
 void mousePressed() {
   //Check clock 
   if(overClock){
-    
+    clock.clockFaceMode = true;
   }
   
   if (overChangeMode) {
@@ -102,6 +102,8 @@ void mousePressed() {
   
   //Check timer
   if(overTimer){
+    //Set mode
+    timer.timeMode = true;
      //set timer 
      timer.setTimerDailog();
   }

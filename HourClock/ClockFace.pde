@@ -9,6 +9,9 @@ int secDiff;
 * @author Ashley Hutton, Hannah Johnson, Rabel Marte
 */
 public class ClockFace {
+  //keep tack of which mode is selected.
+  boolean clockFaceMode = false;
+  
   /** ---data members--- */
 
   /** related to clock */

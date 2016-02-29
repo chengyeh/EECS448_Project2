@@ -1,4 +1,6 @@
 public class Timer {
+  //keep tack of which mode is selected.
+  boolean timeMode = false;
   
   public void startTimer(){}
   public void stopTimer(){}

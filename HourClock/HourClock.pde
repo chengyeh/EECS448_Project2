@@ -5,9 +5,9 @@
 */
 
 Menu mainMenu;
-ClockFace clock;
+ClockFace clock=new ClockFace();
 DateCalendar date;
-Timer timer;
+Timer timer = new Timer();
 int radius;
 
 int seconds = 0;
@@ -18,14 +18,15 @@ int j = 1;
 
 
 void setup() {
-
+  //Set window size and the window
   size(1100, 1120);
   fill(255);
   
-  mainMenu = new Menu();
-  clock = new ClockFace();
-  date = new DateCalendar();
-  timer = new Timer();
+  //Variables for all class
+  mainMenu  = new Menu();
+  //clock     = new ClockFace();
+  date      = new DateCalendar();
+  //timer     = new Timer();
     
   mainMenu.toggleView();
 
@@ -44,46 +45,56 @@ void setup() {
 }
 
 void draw() {
+    //Get mouse click info
     update(mouseX, mouseY);
-    background(255);
-
-    radius = clock.getRadius();
-
-    /** Check if clock rolls over from AM/PM */
-    seconds = second() + secDiff;
-       
-    if (seconds == (60 * k)){
-      minutes++;
-      k++;
-    }
-    if (minutes == (60 * j)){
-      hours++;
-      j++;
-    }
-    if (hours == 24){
-      hours = 0;
-    }
-
-    mainMenu.displayMenu();
     
-    if (hours >= 12){           
-      mainMenu.setTimeOfDay(false);
-    }
-    else if (hours < 12){
-      mainMenu.setTimeOfDay(true);
-    }
+    //Set the backgroun color of the main window
+    background(255);
+    
+    //Display the Mian menu
+    mainMenu.displayMenu();
 
-    /** Repeatedly prints the clock and its hands as they tick (12 & 24 mode) */
-    if (mainMenu.getView()) {
-
-        clock.display12Hour(clock.getRadius(), currentDesign);
-        clock.displayAMPM(clock.getRadius(), currentDesign);
-        clock.display12Hands(clock.getRadius(), currentDesign);
+    if(clock.clockFaceMode == true){
+      radius = clock.getRadius();
+  
+      /** Check if clock rolls over from AM/PM */
+      seconds = second() + secDiff;
+         
+      if (seconds == (60 * k)){
+        minutes++;
+        k++;
+      }
+      if (minutes == (60 * j)){
+        hours++;
+        j++;
+      }
+      if (hours == 24){
+        hours = 0;
+      }
+  
+      
+      
+      if (hours >= 12){           
+        mainMenu.setTimeOfDay(false);
+      }
+      else if (hours < 12){
+        mainMenu.setTimeOfDay(true);
+      }
+  
+      /** Repeatedly prints the clock and its hands as they tick (12 & 24 mode) */
+      if (mainMenu.getView()) {
+  
+          clock.display12Hour(clock.getRadius(), currentDesign);
+          clock.displayAMPM(clock.getRadius(), currentDesign);
+          clock.display12Hands(clock.getRadius(), currentDesign);
+      }
+      else {
+  
+          clock.display24Hour(clock.getRadius(), currentDesign);
+          clock.display24Hands(clock.getRadius(), currentDesign);
+      }
     }
-    else {
-
-        clock.display24Hour(clock.getRadius(), currentDesign);
-        clock.display24Hands(clock.getRadius(), currentDesign);
-    }
+    
+    
 
 }
