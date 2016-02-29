@@ -10,7 +10,8 @@ int secDiff;
 */
 public class ClockFace {
   //keep tack of which mode is selected.
-  boolean clockFaceMode = false;
+  //By default set the clock to display.
+  boolean clockFaceMode = true;
   
   /** ---data members--- */
 

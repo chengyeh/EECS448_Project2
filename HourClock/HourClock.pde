@@ -4,10 +4,13 @@
 * @author Ashley Hutton, Hannah Johnson, Rabel Marte
 */
 
-Menu mainMenu;
-ClockFace clock=new ClockFace();
-DateCalendar date;
-Timer timer = new Timer();
+//Variables for all class
+Menu mainMenu      = new Menu();;
+ClockFace clock    = new ClockFace();
+StopWatch stpWatch = new StopWatch();
+Timer timer        = new Timer();
+DateCalendar date  = new DateCalendar();
+
 int radius;
 
 int seconds = 0;
@@ -22,12 +25,6 @@ void setup() {
   size(1100, 1120);
   fill(255);
   
-  //Variables for all class
-  mainMenu  = new Menu();
-  //clock     = new ClockFace();
-  date      = new DateCalendar();
-  //timer     = new Timer();
-    
   mainMenu.toggleView();
 
   /** Calculates the differnce in time between user input and current time (12 & 24 mode) */
@@ -54,7 +51,9 @@ void draw() {
     //Display the Mian menu
     mainMenu.displayMenu();
 
+    //Display the slected functionality
     if(clock.clockFaceMode == true){
+      //Clock is selected
       radius = clock.getRadius();
   
       /** Check if clock rolls over from AM/PM */
@@ -94,7 +93,10 @@ void draw() {
           clock.display24Hands(clock.getRadius(), currentDesign);
       }
     }
-    
-    
-
+    else if(stpWatch.stopWatchMode == true){
+      //StopWatch is selected
+    }
+    else if(timer.timerMode == true){
+      //Timer is selected
+    }
 }

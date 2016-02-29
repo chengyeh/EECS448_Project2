@@ -35,6 +35,9 @@ void mousePressed() {
   //Check clock 
   if(overClock){
     clock.clockFaceMode = true;
+    stpWatch.stopWatchMode = false;
+    timer.timerMode = false;
+    
   }
   
   if (overChangeMode) {
@@ -85,7 +88,9 @@ void mousePressed() {
   
   //Check stopwatch
   if(overStopWatch){
-    
+    clock.clockFaceMode = false;
+    stpWatch.stopWatchMode = true;
+    timer.timerMode = false;
   }
   
   if(overStopWatchStart){
@@ -103,7 +108,10 @@ void mousePressed() {
   //Check timer
   if(overTimer){
     //Set mode
-    timer.timeMode = true;
+    clock.clockFaceMode = false;
+    stpWatch.stopWatchMode = false;
+    timer.timerMode = true;
+    
      //set timer 
      timer.setTimerDailog();
   }
