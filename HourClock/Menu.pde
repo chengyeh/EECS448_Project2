@@ -49,7 +49,7 @@ public class Menu {
     PImage StopWatch_Reset;
     PImage StopWatch_Start;
     PImage StopWatch_Stop;
-    PImage SetTimer;
+    PImage Timer_Reset;
     PImage Timer;
     PImage Timer_Start;
     PImage Timer_Stop;
@@ -73,7 +73,7 @@ public class Menu {
     StopWatch_Reset = loadImage("StopWatch_Reset.png");
     StopWatch_Start = loadImage("StopWatch_Start.png");
     StopWatch_Stop = loadImage("StopWatch_Stop.png");
-    SetTimer = loadImage("SetTimer.png");
+    Timer_Reset = loadImage("Timer_Reset.png");
     Timer = loadImage("Timer.png");
     Timer_Start = loadImage("Timer_Start.png");
     Timer_Stop = loadImage("Timer_Stop.png");
@@ -133,8 +133,8 @@ public class Menu {
     Timer_Stop.resize(150, 60);
     image(Timer_Stop, 560, 940);
     
-    SetTimer.resize(150, 60);
-    image(SetTimer, 730, 940);
+    Timer_Reset.resize(150, 60);
+    image(Timer_Reset, 730, 940);
     
     Sun.resize(90, 60);
     image(Sun, 95, 320);
