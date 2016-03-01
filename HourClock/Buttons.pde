@@ -95,7 +95,7 @@ void mousePressed() {
   }
   
   if(overStopWatchStart){
-    stpWatch.stopStopWatch();
+    stpWatch.startStopWatch();
   }
   
   if(overStopWatchStop){
