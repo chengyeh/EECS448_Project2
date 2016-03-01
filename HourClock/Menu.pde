@@ -55,13 +55,7 @@ public class Menu {
     PImage Timer_Stop;
     PImage Plus;
     PImage Minus;
-    PImage Mon;
-    PImage Tue;
-    PImage Wed;
-    PImage Thu;
-    PImage Fri;
-    PImage Sat;
-    PImage Sun;
+    
 
     switchTo12 = loadImage("switchTo12.png");
     switchTo24 = loadImage("switchTo24.png");
@@ -79,13 +73,7 @@ public class Menu {
     Timer_Stop = loadImage("Timer_Stop.png");
     Plus = loadImage("PLUS.png");
     Minus = loadImage("MINUS.png");
-    Mon = loadImage("MON.png");
-    Tue = loadImage("TUE.png");
-    Wed = loadImage("WED.png");
-    Thu = loadImage("THU.png");
-    Fri = loadImage("FRI.png");
-    Sat = loadImage("SAT.png");
-    Sun = loadImage("SUN.png");
+    
     
     //Position the buttons
     Plus.resize(60, 60);
@@ -135,47 +123,6 @@ public class Menu {
     
     Timer_Reset.resize(150, 60);
     image(Timer_Reset, 730, 940);
-    
-    Sun.resize(90, 60);
-    image(Sun, 95, 320);
-    
-    //if(getDay() == 1)
-    //{
-    //  Sun.resize(90, 60);
-    //  image(Sun, 95, 320);
-    //}
-    //else if(getDay() == 2)
-    //{
-    //  Mon.resize(90, 60);
-    //  image(Mon, 95, 320);
-    //}
-    //else if(getDay() == 3)
-    //{
-    //  Tue.resize(90, 60);
-    //  image(Tue, 95, 320);
-    //}
-    //else if(getDay() == 4)
-    //{
-    //  Wed.resize(90, 60);
-    //  image(Wed, 95, 320);
-    //}
-    //else if(getDay() == 5)
-    //{
-    //  Thu.resize(90, 60);
-    //  image(Thu, 95, 320);
-    //}
-    //else if(getDay() == 6)
-    //{
-    //  Fri.resize(90, 60);
-    //  image(Fri, 95, 320);
-    //}
-    //else if(getDay() == 7)
-    //{
-    //  Sat.resize(90, 60);
-    //  image(Sat, 95, 320);
-    //}
-
-
   }
 
   /**

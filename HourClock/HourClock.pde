@@ -50,10 +50,14 @@ void draw() {
     
     //Display the Mian menu
     mainMenu.displayMenu();
-
+    
     //Display the slected functionality
     if(clock.clockFaceMode == true){
       //Clock is selected
+      
+      //Display day of the week
+      date.displayDateCalendar();
+    
       radius = clock.getRadius();
   
       /** Check if clock rolls over from AM/PM */
@@ -95,8 +99,10 @@ void draw() {
     }
     else if(stpWatch.stopWatchMode == true){
       //StopWatch is selected
+      stpWatch.displayStopWatch();
     }
     else if(timer.timerMode == true){
       //Timer is selected
+      timer.displayTimer();
     }
 }

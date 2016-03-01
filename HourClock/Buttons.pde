@@ -74,6 +74,7 @@ void mousePressed() {
   if(overSetDate){
      //set date  
      date.setDateDialog();
+     date.getDayOfTheWeek();
   }
   
   //Check zoom in and out
