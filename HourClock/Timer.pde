@@ -9,12 +9,14 @@ public class Timer {
   private int hours = 0;
   private int minutes = 0;
   private int seconds = 0;
-  
+  private int resetValue=0;
   //Variables for input pattern matching
   private Pattern patternTimer;
   private Matcher matchTimer;
   
-  public void startTimer(){}
+  public void startTimer(){
+    
+  }
   public void stopTimer(){}
   public void resetTimer(){}
   
