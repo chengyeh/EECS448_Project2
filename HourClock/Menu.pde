@@ -44,51 +44,46 @@ public class Menu {
     PImage changeTime;
     PImage changeFace;
     PImage SetDate;
-    PImage Clock;
+    PImage ClockButton;
     PImage StopWatch;
     PImage StopWatch_Reset;
     PImage StopWatch_Start;
     PImage StopWatch_Stop;
-    PImage SetTimer;
+    PImage Timer_Reset;
     PImage Timer;
     PImage Timer_Start;
     PImage Timer_Stop;
     PImage Plus;
     PImage Minus;
+    
 
     switchTo12 = loadImage("switchTo12.png");
     switchTo24 = loadImage("switchTo24.png");
     changeTime = loadImage("changeTime.png");
     changeFace = loadImage("switchFace.png");
-    //EnterDate  = loadImage("EnterDate.png");
-
-    //EnterDate.resize(150, 60);
-    //image(EnterDate, 0, 0);
     SetDate  = loadImage("SetDate.png");
-    Clock = loadImage("Clock.png");
+    ClockButton = loadImage("Clock.png");
     StopWatch = loadImage("StopWatch.png");
     StopWatch_Reset = loadImage("StopWatch_Reset.png");
     StopWatch_Start = loadImage("StopWatch_Start.png");
     StopWatch_Stop = loadImage("StopWatch_Stop.png");
-    SetTimer = loadImage("SetTimer.png");
+    Timer_Reset = loadImage("Timer_Reset.png");
     Timer = loadImage("Timer.png");
     Timer_Start = loadImage("Timer_Start.png");
     Timer_Stop = loadImage("Timer_Stop.png");
- 
-    //SetDate.resize(150, 60);
-    //image(SetDate, 0, 0);
-    
     Plus = loadImage("PLUS.png");
     Minus = loadImage("MINUS.png");
     
+    
+    //Position the buttons
     Plus.resize(60, 60);
-    image(Plus, 1040, 0);
+    image(Plus, 945, 290);
     
     Minus.resize(60, 60);
-    image(Minus, 1040, 70);
+    image(Minus, 945, 360);
 
-    Clock.resize(150, 60);
-    image(Clock, 220, 760);
+    ClockButton.resize(150, 60);
+    image(ClockButton, 220, 760);
 
     changeTime.resize(150, 60);
     image(changeTime, 390, 760);
@@ -96,7 +91,6 @@ public class Menu {
     if (getView()){
       switchTo24.resize(150, 60);
       image(switchTo24, 560, 760);
-
     }
     else{
       switchTo12.resize(150, 60);
@@ -106,10 +100,29 @@ public class Menu {
     SetDate.resize(150, 60);
     image(SetDate, 730, 760);
     
-//    changeFace.resize(150, 60);
-//    image(changeFace, (width/2 + radius/2 - 150), 760);
-
-
+    StopWatch.resize(150, 60);
+    image(StopWatch, 220, 850);
+    
+    StopWatch_Start.resize(150, 60);
+    image(StopWatch_Start, 390, 850);
+    
+    StopWatch_Stop.resize(150, 60);
+    image(StopWatch_Stop, 560, 850);
+    
+    StopWatch_Reset.resize(150, 60);
+    image(StopWatch_Reset, 730, 850);
+    
+    Timer.resize(150, 60);
+    image(Timer, 220, 940);
+    
+    Timer_Start.resize(150, 60);
+    image(Timer_Start, 390, 940);
+    
+    Timer_Stop.resize(150, 60);
+    image(Timer_Stop, 560, 940);
+    
+    Timer_Reset.resize(150, 60);
+    image(Timer_Reset, 730, 940);
   }
 
   /**

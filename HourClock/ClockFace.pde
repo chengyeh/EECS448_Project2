@@ -9,6 +9,10 @@ int secDiff;
 * @author Ashley Hutton, Hannah Johnson, Rabel Marte
 */
 public class ClockFace {
+  //keep tack of which mode is selected.
+  //By default set the clock to display.
+  boolean clockFaceMode = true;
+  
   /** ---data members--- */
 
   /** related to clock */
@@ -31,6 +35,38 @@ public class ClockFace {
     @post displays valid 12 hour clock face
     @return none
   */
+  
+  public int getRadius()
+  {
+    return c_radius;
+  }
+  
+  public void addRadius()
+  {
+    if(c_radius==600)
+    {
+      c_radius=600;
+    }
+    else
+    {
+      c_radius=radius+50;
+    }
+      
+  }
+  
+  public void subRadius()
+  {
+    if(c_radius==300)
+    {
+      c_radius=300;
+    }
+    else
+    {
+      c_radius=radius-50;
+    }
+      
+  }
+  
   public void display12Hour(int radius, clockDesigns cDesigns) {
 
     /** load picture with 1-12 clockface */
