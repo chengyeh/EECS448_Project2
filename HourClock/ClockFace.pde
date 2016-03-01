@@ -15,7 +15,7 @@ public class ClockFace {
   int m_xpos;
   int m_ypos;
   int m_radius;
-  
+  int c_radius=600;
   /** 
     @pre none
     @post none
