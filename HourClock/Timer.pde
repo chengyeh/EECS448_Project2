@@ -10,15 +10,13 @@ public class Timer {
   private int minutes = 0;
   private int seconds = 0;
   private int resetValue=0;
+  private int totalSeconds = 0;
+  private int startTime=0;
+  private int currentTime=0;
+  private boolean runTimer=false;
   //Variables for input pattern matching
   private Pattern patternTimer;
   private Matcher matchTimer;
-  
-  public void startTimer(){
-    
-  }
-  public void stopTimer(){}
-  public void resetTimer(){}
   
   public void setTimerDailog(){
     /** checks if time is entered correctly */
@@ -63,7 +61,41 @@ public class Timer {
     System.out.println("hours: " + hours);
     System.out.println("minutes: " + minutes);
     System.out.println("seconds: " + seconds);
+    System.out.println("total seconds: " + convertTimeInSeconds(hours, minutes, seconds));
+    totalSeconds= convertTimeInSeconds(hours, minutes, seconds);
+    resetValue=totalSeconds;
+    
   }//End of setTimerDailog()
+  
+  public int convertTimeInSeconds(int hours, int minutes, int seconds){
+    totalSeconds = (hours * 3600)+ (minutes * 60) + seconds;
+    return(totalSeconds);
+  }
+  public void runCountdownTimer(){
+     while(runTimer==true)
+    {
+      if(millis()>currentTime+1000)
+       {
+          currentTime=millis();
+          totalSeconds--;
+      }
+      System.out.println(totalSeconds);
+    } 
+  }
+  
+  public void startTimer(){  
+    runTimer=true;
+    runCountdownTimer();
+  }
+  
+  public void stopTimer(){
+    runTimer=false;
+  }
+  public void resetTimer(){
+          stopTimer();
+          totalSeconds= resetValue;
+  }
+  
   
   //Timer Display function
   public void displayTimer(){

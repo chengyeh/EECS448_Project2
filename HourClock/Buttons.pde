@@ -118,15 +118,15 @@ void mousePressed() {
   }
 
   if(overTimerStart){
-  
+    timer.startTimer();
   }
 
   if(overTimerStop){
-    
+    timer.stopTimer();
   }
 
   if(overTimerReset){
-    
+    timer.resetTimer();
   }
 }
 
