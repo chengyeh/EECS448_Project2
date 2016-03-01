@@ -8,7 +8,7 @@
 Menu mainMenu      = new Menu();;
 ClockFace clock    = new ClockFace();
 StopWatch stpWatch = new StopWatch();
-Timer timer        = new Timer();
+CountBackTimer timer = new CountBackTimer();
 DateCalendar date  = new DateCalendar();
 
 int radius;
