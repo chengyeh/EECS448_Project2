@@ -95,15 +95,15 @@ void mousePressed() {
   }
   
   if(overStopWatchStart){
-    
+    stpWatch.stopStopWatch();
   }
   
   if(overStopWatchStop){
-    
+    stpWatch.stopStopWatch();
   }
   
   if(overStopWatchReset){
-    
+    stpWatch.resetStopWatch();
   }
   
   //Check timer
