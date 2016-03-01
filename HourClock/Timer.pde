@@ -9,6 +9,7 @@ public class Timer {
   private int hours = 0;
   private int minutes = 0;
   private int seconds = 0;
+  private int totalSeconds = 0;
   
   //Variables for input pattern matching
   private Pattern patternTimer;
@@ -61,8 +62,17 @@ public class Timer {
     System.out.println("hours: " + hours);
     System.out.println("minutes: " + minutes);
     System.out.println("seconds: " + seconds);
+    System.out.println("total seconds: " + convertTimeInSeconds(hours, minutes, seconds));
   }//End of setTimerDailog()
   
+  public int convertTimeInSeconds(int hours, int minutes, int seconds){
+    totalSeconds = (hours * 3600)+ (minutes * 60) + seconds;
+    return(totalSeconds);
+  }
+  
+  public void startTimer(){
+    (totalSeconds - 1);
+  }
   //Timer Display function
   public void displayTimer(){
     //TODO
