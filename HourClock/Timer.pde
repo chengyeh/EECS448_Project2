@@ -72,20 +72,23 @@ public class Timer {
     return(totalSeconds);
   }
   public void runCountdownTimer(){
+    System.out.println("inside runTimer");
      while(runTimer==true)
     {
+      System.out.println("inside while loop");
       if(millis()>currentTime+1000)
        {
           currentTime=millis();
           totalSeconds--;
       }
-      System.out.println(totalSeconds);
+      //System.out.println(totalSeconds);
     } 
   }
   
   public void startTimer(){  
     runTimer=true;
-    runCountdownTimer();
+    System.out.println("inside start timer");
+    //runCountdownTimer(); this line is throwing everything off
   }
   
   public void stopTimer(){
