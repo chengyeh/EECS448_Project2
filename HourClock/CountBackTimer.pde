@@ -12,6 +12,8 @@ public class CountBackTimer {
   private int minutes = 0;
   private int seconds = 0;
   
+  private int fontSize=100;
+  
   //Total number of seconds that the user input
   private int totalSeconds = 0;
   
@@ -100,17 +102,42 @@ public class CountBackTimer {
     startTimer();
   }
   
+  public void addTSize()
+  {
+    if(fontSize==100)
+    {
+      fontSize=100;
+    }
+    else
+    {
+      fontSize=fontSize+10;
+    }
+      
+  }
   
+  public void subTSize()
+  {
+    if(fontSize==50)
+    {
+      fontSize=50;
+    }
+    else
+    {
+      fontSize=fontSize-10;
+    }
+      
+  }
   //Timer Display function
   public void displayTimer(){
     //Covert the total number seconds to hours, minutes, and seconds
     int displayHours = totalSeconds / 3600;
     int displayMinutes = (totalSeconds - (displayHours*3600)) / 60;
     int displaySeconds = (totalSeconds - (displayMinutes*60)) % 60;
-    
+    int shifts=0;
+    shifts=(fontSize-shifts)/2;
     //display timer in proper format
     fill(0,0,0);
-    textSize(100);
-    text(nf(displayHours,2,0) + ":" + nf(displayMinutes,2,0) + ":" + nf(displaySeconds,2,0),340,360);
+    textSize(fontSize);
+    text(nf(displayHours,2,0) + ":" + nf(displayMinutes,2,0) + ":" + nf(displaySeconds,2,0),340-shifts,260+shifts+shifts*2);
   }
 }

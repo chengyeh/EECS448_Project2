@@ -81,10 +81,14 @@ void mousePressed() {
   if(overZoomIn){
       //increase radius
       clock.addRadius();
+      timer.addTSize();
+      stpWatch.addSWSize();
   }
   if(overZoomOut){
      //decrease radius 
      clock.subRadius();
+     timer.subTSize();
+     stpWatch.subSWSize();
   }
   
   //Check stopwatch

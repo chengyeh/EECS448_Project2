@@ -11,6 +11,7 @@ public class StopWatch {
   int SW_Milliseconds;
   int startTime = 0;
   int counter;
+  int fontSize=100;
   
   public void startStopWatch()
   {
@@ -33,7 +34,31 @@ public class StopWatch {
     SW_Start = false;
     startTime = millis();
   }
+  public void addSWSize()
+  {
+    if(fontSize==100)
+    {
+      fontSize=100;
+    }
+    else
+    {
+      fontSize=fontSize+10;
+    }
+      
+  }
   
+  public void subSWSize()
+  {
+    if(fontSize==50)
+    {
+      fontSize=50;
+    }
+    else
+    {
+      fontSize=fontSize-10;
+    }
+      
+  }
    //Stopwatch Display function
   public void displayStopWatch()
   {
@@ -60,9 +85,12 @@ public class StopWatch {
       SW_HundredthsSeconds = 0;
     }
     
+    int shifts=0;
+    shifts=(fontSize-shifts)/2;
+    //display timer in proper format
     fill(0,0,0);
-    textSize(100);
-    text(nf(SW_Minutes,2,0) + ":" + nf(SW_Seconds,2,0) + ":" + nf(SW_HundredthsSeconds,2,0),340,360);
+    textSize(fontSize);
+    text(nf(SW_Minutes,2,0) + ":" + nf(SW_Seconds,2,0) + ":" + nf(SW_HundredthsSeconds,2,0),340-shifts,260+shifts+shifts*2);
   }
   
 }
