@@ -242,11 +242,11 @@ public class Menu {
         /** if user presses cancel:
          1) set time to set time to computer clock time if user first opens program
          2) do not change time if user has already been running clock */
-        timeIsValid = true;
+        timeIsValid = false;
         
-        m_hour = hour() + hourDiff;
-        m_minute = minute() + minDiff;
-        m_second = second() + secDiff;
+        //m_hour = hour() + hourDiff;
+        //m_minute = minute() + minDiff;
+        //m_second = second() + secDiff;
       }
       else{
 
@@ -308,11 +308,11 @@ public class Menu {
         /** if user presses cancel:
          1) set time to computer clock time if user first opens program
          2) do not change time if user has already been running clock */
-        timeIsValid = true;
+        timeIsValid = false;
 
-        m_hour = hour() + hourDiff;
-        m_minute = minute() + minDiff;
-        m_second = second() + secDiff;
+        //m_hour = hour() + hourDiff;
+        //m_minute = minute() + minDiff;
+        //m_second = second() + secDiff;
       }
 
       else{
