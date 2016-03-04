@@ -48,6 +48,11 @@ void draw() {
     //Set the backgroun color of the main window
     background(255);
     
+    //Display POWER button
+    PImage Power = loadImage("POWER.png");
+    Power.resize(60, 60);
+    image(Power, 0, 0);
+    
     //Display the Mian menu
     mainMenu.displayMenu();
     
