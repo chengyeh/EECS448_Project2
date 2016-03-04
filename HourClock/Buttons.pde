@@ -138,10 +138,20 @@ void mousePressed() {
   }
   
   if(overPower){
-     clock.clockFaceMode=false;
-     stpWatch.stopWatchMode=false;
-     timer.timerMode = false;
-     power.switchPowerMode();
+    if(power.powerMode==false)
+    {
+       clock.clockFaceMode=true;
+       stpWatch.stopWatchMode=false;
+       timer.timerMode = false;
+       power.switchPowerMode();
+    }
+    else if(power.powerMode==true)
+    {
+         clock.clockFaceMode=false;
+       stpWatch.stopWatchMode=false;
+       timer.timerMode = false;
+       power.switchPowerMode();
+    }
   }
 }
 

@@ -44,15 +44,12 @@ void draw() {
     update(mouseX, mouseY);
     //Set the backgroun color of the main window
     background(255);
-<<<<<<< HEAD
-=======
     
     //Display POWER button
     PImage Power = loadImage("POWER.png");
     Power.resize(60, 60);
     image(Power, 0, 0);
     
->>>>>>> b26414ae65e5bd0ca6ce6805cd9d3188f1c3391a
     //Display the Mian menu
     mainMenu.displayMenu();
     //Display the slected functionality
@@ -113,7 +110,7 @@ void draw() {
       //Timer is selected
       timer.displayTimer();
     }
-    else if(power.PowerMode == false){
+    else if(power.powerMode == false){
          power.displayOff(); 
     }
 }
