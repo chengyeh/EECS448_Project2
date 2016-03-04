@@ -242,11 +242,11 @@ public class Menu {
         /** if user presses cancel:
          1) set time to set time to computer clock time if user first opens program
          2) do not change time if user has already been running clock */
-        timeIsValid = false;
+        timeIsValid = true;
         
-        //m_hour = hour() + hourDiff;
-        //m_minute = minute() + minDiff;
-        //m_second = second() + secDiff;
+        m_hour = hour() + hourDiff;
+        m_minute = minute() + minDiff;
+        m_second = second() + secDiff;
       }
       else{
 
@@ -308,11 +308,11 @@ public class Menu {
         /** if user presses cancel:
          1) set time to computer clock time if user first opens program
          2) do not change time if user has already been running clock */
-        timeIsValid = false;
+        timeIsValid = true;
 
-        //m_hour = hour() + hourDiff;
-        //m_minute = minute() + minDiff;
-        //m_second = second() + secDiff;
+        m_hour = hour() + hourDiff;
+        m_minute = minute() + minDiff;
+        m_second = second() + secDiff;
       }
 
       else{
@@ -345,4 +345,115 @@ public class Menu {
       }
     }
   }
+  
+  public void setInit12HrTime(){
+
+    /** checks if time is entered correctly */
+    Boolean timeIsValid = false;
+    /** the string that the user inputs with the time */
+    String currentTime;
+
+    /** regular expression looking for the format "##:##:## AM/PM in 12hr */
+    String timePattern_12hr = "(^[1-9]|1[0-2]):([0-5][0-9]):([0-5][0-9])[ ]?(?i)(am|pm)$";
+
+    /** loop until the time entered matches the given regex */
+    while (!timeIsValid){
+
+      currentTime = showInputDialog("Enter Time\nExample of format: 1:15:45 AM");
+
+      if (currentTime == null){
+        /** if user presses cancel:
+         1) clear input field and display input dialog again */
+         
+        timeIsValid = false;
+      }
+      else{
+
+        /** compile and match regex to the given input */
+        pattern12 = Pattern.compile(timePattern_12hr);
+        match12 = pattern12.matcher(currentTime);
+
+        /** matches found -- valid input */
+        if (match12.find()){
+
+          timeIsValid = true;
+
+          /** set hours to first group of regex */
+          m_hour = Integer.parseInt(match12.group(1));
+          /** set minutes to second group of regex */
+          m_minute = Integer.parseInt(match12.group(2));
+          /** set seconds to third group of regext */
+          m_second = Integer.parseInt(match12.group(3));
+
+          /** set m_isAM to true if user inputs 'am' */
+          if (match12.group(4).equalsIgnoreCase("am")){
+
+            m_isAM = true;
+            hours = m_hour;
+          }
+          else {
+
+            m_isAM = false;
+            hours = m_hour + 12;
+
+          }
+
+          minutes = m_minute;
+        }
+      }
+    }
+  }
+  
+  public void setInit24HrTime(){
+
+    /** checks if time is entered correctly */
+    Boolean timeIsValid = false;
+    /** the string that the user inputs with the time */
+    String currentTime;
+
+    /** regular expression looking for the format "##:##:## in 24hr */
+    String timePattern_24hr = "(^[01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$";
+
+    while(!timeIsValid){
+
+      currentTime = showInputDialog("Enter Time\nExample of format: 1:15:45");
+
+      if (currentTime == null){
+        /** if user presses cancel:
+         1) clear input field and display input dialog again */
+         
+        timeIsValid = false;
+      }
+
+      else{
+
+        /** compile and match regex to the given input */
+        pattern24 = Pattern.compile(timePattern_24hr);
+        match24 = pattern24.matcher(currentTime);
+
+        if (match24.find()){
+
+          timeIsValid = true;
+
+          /** set hours to first group of regex */
+          m_hour = Integer.parseInt(match24.group(1));
+          /** set minutes to second group of regex */
+          m_minute = Integer.parseInt(match24.group(2));
+          /** set seconds to third group of regext */
+          m_second = Integer.parseInt(match24.group(3));
+
+          if (m_hour > 12){
+            m_isAM = false;
+          }
+          if (m_hour <= 12){
+            m_isAM = true;
+          }
+
+          minutes = m_minute;
+          hours = m_hour;
+        }
+      }
+    }
+  }
+ 
 }

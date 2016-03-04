@@ -27,12 +27,12 @@ void setup() {
   /** Calculates the differnce in time between user input and current time (12 & 24 mode) */
   if (mainMenu.getView())
   {
-   mainMenu.set12HrTime();
+   mainMenu.setInit12HrTime();
    clock.calcDiff();
   }
   else
   {
-   mainMenu.set24HrTime();
+   mainMenu.setInit24HrTime();
    clock.calcDiff();
   }
 
