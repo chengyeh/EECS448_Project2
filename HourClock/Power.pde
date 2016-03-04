@@ -14,6 +14,9 @@ public class Power{
   }
   
   public void displayOff(){
-          background(255,255,255); 
+          background(255,255,255);
+          PImage Power = loadImage("POWER.png");
+          Power.resize(60, 60);
+          image(Power, 0, 0);
   }
 }
