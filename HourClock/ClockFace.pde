@@ -248,7 +248,7 @@ public class ClockFace {
       else if(cDesigns == clockDesigns.PIZZA) { am = loadImage("AM.png"); }
      
       am.resize(48, 34);
-      image(am, radius + 70, radius - 135);
+      image(am, 530, 370);
     }
     else {
 
@@ -261,7 +261,7 @@ public class ClockFace {
       
       
       pm.resize(48, 34);
-      image(pm, radius + 70, radius - 135);
+      image(pm, 530, 370);
     }
   }     
 }
