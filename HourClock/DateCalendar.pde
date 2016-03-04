@@ -7,11 +7,30 @@ import java.util.regex.*;
   private int year = 0;
   private int month = 0;
   private int day = 0;
-  
+  private int hour = 1;
+  private int minute=2;
+  private int second=3;
   private Pattern patternDate;
   private Matcher matchDate;
   
   DateCalendar(){
+  }
+  public void setMinute(int minutes){
+    minute=minutes;
+  }
+  
+  public void setHour(int hours){
+    hour=hours;
+  }
+  
+  public void setSeconds(int seconds)
+  {
+    second=seconds;
+  }
+  public void printStatements(){
+     System.out.println(hour);
+     System.out.println(minute);
+     System.out.println(second);
   }
   
   public void setDateDialog(){
@@ -23,7 +42,7 @@ import java.util.regex.*;
 
     /** regular expression looking for the format "MM/DD/YYYY" */
     String datePattern = "^(0?[1-9]|1[012])/(0?[1-9]|[12][0-9]|3[01])/((19|20)\\d\\d)$";
-
+    
     while(!dateIsValid){
       //prompt the user for date input
       inputDate = showInputDialog("Set Date\nEnter date in following format MM/DD/YYYY");
@@ -66,7 +85,6 @@ import java.util.regex.*;
     calendar.set(GregorianCalendar.YEAR, year);
     calendar.set(GregorianCalendar.MONTH, (month - 1));
     calendar.set(GregorianCalendar.DATE, day);
-    
     return(calendar.get(GregorianCalendar.DAY_OF_WEEK));
   }
   

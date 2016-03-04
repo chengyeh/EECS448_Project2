@@ -132,6 +132,13 @@ void mousePressed() {
   if(overTimerReset){
     timer.resetTimer();
   }
+  
+  if(overPower){
+     clock.clockFaceMode=false;
+     stpWatch.stopWatchMode=false;
+     timer.timerMode = false;
+     power.switchPowerMode();
+  }
 }
 
 /**

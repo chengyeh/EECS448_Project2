@@ -10,14 +10,12 @@ ClockFace clock    = new ClockFace();
 StopWatch stpWatch = new StopWatch();
 CountBackTimer timer = new CountBackTimer();
 DateCalendar date  = new DateCalendar();
-
+Power  power= new Power();
 int radius;
 
 int seconds = 0;
 int minutes = 0;
 int hours = 0;
-int k = 1;
-int j = 1;
 
 
 void setup() {
@@ -44,38 +42,39 @@ void setup() {
 void draw() {
     //Get mouse click info
     update(mouseX, mouseY);
-    
     //Set the backgroun color of the main window
     background(255);
-    
     //Display the Mian menu
     mainMenu.displayMenu();
-    
     //Display the slected functionality
     if(clock.clockFaceMode == true){
       //Clock is selected
       
       //Display day of the week
-      date.displayDateCalendar();
     
       radius = clock.getRadius();
   
       /** Check if clock rolls over from AM/PM */
       seconds = second() + secDiff;
-         
-      if (seconds == (60 * k)){
+      //System.out.println(seconds);
+      date.displayDateCalendar();
+      
+      if (seconds%60==0){
         minutes++;
-        k++;
+        date.setMinute(minutes);
       }
-      if (minutes == (60 * j)){
+      if(minutes == 60)
+      {
+         minutes=0; 
+      }
+      if (minutes %60==0){
         hours++;
-        j++;
+        date.setHour(hours);
       }
+      
       if (hours == 24){
         hours = 0;
       }
-  
-      
       
       if (hours >= 12){           
         mainMenu.setTimeOfDay(false);
@@ -104,5 +103,8 @@ void draw() {
     else if(timer.timerMode == true){
       //Timer is selected
       timer.displayTimer();
+    }
+    else if(power.PowerMode == false){
+         power.displayOff(); 
     }
 }
