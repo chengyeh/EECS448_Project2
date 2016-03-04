@@ -3,6 +3,7 @@
 *
 * @author Ashley Hutton, Hannah Johnson, Rabel Marte
 */
+boolean overPower       = false;
 
 boolean overClock       = false;
 boolean overChangeMode  = false;
@@ -32,6 +33,9 @@ clockDesigns currentDesign;
 *  @return none
 */
 void mousePressed() {
+  //Power
+
+  
   //Check clock 
   if(overClock){
     clock.clockFaceMode = true;
@@ -148,8 +152,33 @@ void mousePressed() {
 */
 void update(int x, int y) {
   //Clock buttons
-  if(overClock(220, 760, 150, 60)){
+  if(overPower(0, 0, 60, 60)){
     /**Set button */
+    overPower       = true; 
+    
+    overClock       = false;
+    overChangeMode  = false;
+    overChangeTime  = false;
+    overChangeFace  = false;
+    overSetDate     = false;
+    
+    overZoomIn      = false;
+    overZoomOut     = false;
+    
+    overStopWatch       = false;
+    overStopWatchStart  = false;
+    overStopWatchStop   = false;
+    overStopWatchReset  = false;
+    
+    overTimer           = false;
+    overTimerStart      = false;
+    overTimerStop       = false;
+    overTimerReset      = false;
+  }
+  else if(overClock(220, 760, 150, 60)){
+    /**Set button */
+    overPower       = false;
+    
     overClock       = true;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -171,6 +200,8 @@ void update(int x, int y) {
   }
   else if ( overChangeMode(560, 760, 150, 60) ) {
      /** set overChangeMode true if button was pressed */
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = true;
     overChangeTime  = false;
@@ -192,6 +223,8 @@ void update(int x, int y) {
   }
   else if (overChangeTime(390, 760, 150, 60) ){
      /** set changeTime true if button was pressed */
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = true;
@@ -222,6 +255,8 @@ void update(int x, int y) {
   //}
   else if (overSetDate(730, 760, 150, 60) ){
     /** set everything to false if not on button */
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -244,6 +279,8 @@ void update(int x, int y) {
   //Zoom in and out button
   else if (overZoomIn(945, 290, 60, 60) ){
     /** set everything to false if not on button */
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -265,6 +302,8 @@ void update(int x, int y) {
   }
   else if (overZoomOut(945, 360, 60, 60) ){
     /** set everything to false if not on button */
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -285,6 +324,8 @@ void update(int x, int y) {
     overTimerReset      = false;
   }
   else if (overStopWatch(220, 850, 150, 60)){
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -305,6 +346,8 @@ void update(int x, int y) {
     overTimerReset      = false;
   }
   else if (overStopWatchStart(390, 850, 150, 60)){
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -325,6 +368,8 @@ void update(int x, int y) {
     overTimerReset      = false;
   }
   else if (overStopWatchStop(560, 850, 150, 60)){
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -345,6 +390,8 @@ void update(int x, int y) {
     overTimerReset      = false;
   }
   else if (overStopWatchReset(730, 850, 150, 60)){
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -366,6 +413,8 @@ void update(int x, int y) {
   }
   else if (overTimer(220, 940, 150, 60) ){
     /** set everything to false if not on button */
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -386,6 +435,8 @@ void update(int x, int y) {
     overTimerReset      = false;
   }
   else if (overTimerStart(390, 940, 150, 60)){
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -406,6 +457,8 @@ void update(int x, int y) {
     overTimerReset      = false;
   }
   else if (overTimerStop(560, 940, 150, 60)){
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -426,6 +479,8 @@ void update(int x, int y) {
     overTimerReset      = false;
   }
   else if (overTimerReset(730, 940, 150, 60)){
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -447,6 +502,8 @@ void update(int x, int y) {
   }
   else {
     /** set everything to false if not on button */
+    overPower       = false;
+    
     overClock       = false;
     overChangeMode  = false;
     overChangeTime  = false;
@@ -465,6 +522,15 @@ void update(int x, int y) {
     overTimerStart      = false;
     overTimerStop       = false;
     overTimerReset      = false;
+  }
+}
+
+boolean overPower(int x, int y, int width, int height) {
+  if (mouseX >= x && mouseX <= x+width &&
+      mouseY >= y && mouseY <= y+height) {
+    return true;
+  } else {
+    return false;
   }
 }
 
