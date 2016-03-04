@@ -17,7 +17,6 @@ int seconds = 0;
 int minutes = 0;
 int hours = 0;
 
-
 void setup() {
   //Set window size and the window
   size(1100, 1120);
@@ -26,16 +25,16 @@ void setup() {
   mainMenu.toggleView();
 
   /** Calculates the differnce in time between user input and current time (12 & 24 mode) */
-  if (mainMenu.getView())
-  {
-    mainMenu.set12HrTime();
-    clock.calcDiff();
-  }
-  else
-  {
-    mainMenu.set24HrTime();
-    clock.calcDiff();
-  }
+  //if (mainMenu.getView())
+  //{
+  //  mainMenu.set12HrTime();
+  //  clock.calcDiff();
+  //}
+  //else
+  //{
+  //  mainMenu.set24HrTime();
+  //  clock.calcDiff();
+  //}
 
 }
 
@@ -67,7 +66,6 @@ void draw() {
       
       if (seconds%60==0){
         minutes++;
-        date.setMinute(minutes);
       }
       if(minutes == 60)
       {
@@ -75,11 +73,11 @@ void draw() {
       }
       if (minutes %60==0){
         hours++;
-        date.setHour(hours);
       }
       
       if (hours == 24){
         hours = 0;
+        date.incrementDay();
       }
       
       if (hours >= 12){           
