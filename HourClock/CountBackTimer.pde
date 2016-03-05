@@ -165,11 +165,11 @@ public class CountBackTimer {
     int displayHours = totalSeconds / 3600;
     int displayMinutes = (totalSeconds - (displayHours*3600)) / 60;
     int displaySeconds = (totalSeconds - (displayMinutes*60)) % 60;
-    int shifts=0;
-    shifts=(fontSize-shifts)/2;
+
     //display timer in proper format
     fill(0,0,0);
     textSize(fontSize);
-    text(nf(displayHours,2,0) + ":" + nf(displayMinutes,2,0) + ":" + nf(displaySeconds,2,0),340-shifts,260+shifts+shifts*2);
+    textAlign(CENTER);
+    text(nf(displayHours,2,0) + ":" + nf(displayMinutes,2,0) + ":" + nf(displaySeconds,2,0),550,400);
   }
 }

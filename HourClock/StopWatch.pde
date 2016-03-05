@@ -85,12 +85,11 @@ public class StopWatch {
       SW_HundredthsSeconds = 0;
     }
     
-    int shifts=0;
-    shifts=(fontSize-shifts)/2;
     //display timer in proper format
     fill(0,0,0);
     textSize(fontSize);
-    text(nf(SW_Minutes,2,0) + ":" + nf(SW_Seconds,2,0) + ":" + nf(SW_HundredthsSeconds,2,0),340-shifts,260+shifts+shifts*2);
+    textAlign(CENTER);
+    text(nf(SW_Minutes,2,0) + ":" + nf(SW_Seconds,2,0) + ":" + nf(SW_HundredthsSeconds,2,0),550,400);
   }
   
 }

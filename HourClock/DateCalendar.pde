@@ -7,31 +7,13 @@ import java.util.regex.*;
   private int year = 0;
   private int month = 0;
   private int day = 0;
-  private int hour = 1;
-  private int minute=2;
-  private int second=3;
+  
   private Pattern patternDate;
   private Matcher matchDate;
   
-  DateCalendar(){
-  }
-  public void setMinute(int minutes){
-    minute=minutes;
-  }
+  DateCalendar(){}
   
-  public void setHour(int hours){
-    hour=hours;
-  }
-  
-  public void setSeconds(int seconds)
-  {
-    second=seconds;
-  }
-  public void printStatements(){
-     System.out.println(hour);
-     System.out.println(minute);
-     System.out.println(second);
-  }
+  GregorianCalendar calendar = new GregorianCalendar();
   
   public void setDateDialog(){
     //temp local variables
@@ -74,18 +56,27 @@ import java.util.regex.*;
         }
       }
     }
+    
+    setDateCalendar(year, month, day);
+    
     System.out.println("year: " +year);
     System.out.println("month: " +month);
     System.out.println("day: " +day);
+    System.out.println("day of the week: " + getDayOfTheWeek());
   }
   
-  public int getDayOfTheWeek(){
-    GregorianCalendar calendar = new GregorianCalendar();
-    
+  public void setDateCalendar(int year, int month, int day){
     calendar.set(GregorianCalendar.YEAR, year);
     calendar.set(GregorianCalendar.MONTH, (month - 1));
     calendar.set(GregorianCalendar.DATE, day);
+  }
+  
+  public int getDayOfTheWeek(){
     return(calendar.get(GregorianCalendar.DAY_OF_WEEK));
+  }
+  
+  public void incrementDay(){
+    calendar.add(GregorianCalendar.DAY_OF_MONTH, 1);
   }
   
   public void displayDateCalendar(){
