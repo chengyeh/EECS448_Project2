@@ -2,81 +2,114 @@
 *
 *
 * @author Ashley Hutton, Hannah Johnson, Rabel Marte
+* @author Added Functionality by: Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
 */
 
-Menu mainMenu;
-ClockFace clock;
+//Variables for all class
+Menu mainMenu      = new Menu();;
+ClockFace clock    = new ClockFace();
+StopWatch stpWatch = new StopWatch();
+CountBackTimer timer = new CountBackTimer();
+DateCalendar date  = new DateCalendar();
+Power  power= new Power();
 int radius;
 
 int seconds = 0;
 int minutes = 0;
 int hours = 0;
-int k = 1;
-int j = 1;
-
 
 void setup() {
-
-  size(1000, 700);
+  //Set window size and the window
+  size(1100, 1120);
   fill(255);
-  mainMenu = new Menu();
-  clock = new ClockFace();
-
-    
+  
   mainMenu.toggleView();
 
   /** Calculates the differnce in time between user input and current time (12 & 24 mode) */
   if (mainMenu.getView())
   {
-    mainMenu.set12HrTime();
-    clock.calcDiff();
+   mainMenu.setInit12HrTime();
+   clock.calcDiff();
   }
   else
   {
-    mainMenu.set24HrTime();
-    clock.calcDiff();
+   mainMenu.setInit24HrTime();
+   clock.calcDiff();
   }
 
 }
 
 void draw() {
+    //Get mouse click info
     update(mouseX, mouseY);
+    //Set the backgroun color of the main window
     background(255);
-    radius = 500;
     
-    /** Check if clock rolls over from AM/PM */
-    seconds = second() + secDiff;
-       
-    if (seconds == (60 * k)){
-      minutes++;
-      k++;
-    }
-    if (minutes == (60 * j)){
-      hours++;
-      j++;
-    }
-    if (hours == 24){
-      hours = 0;
-    }
-
+    //Display POWER button
+    PImage Power = loadImage("POWER.png");
+    Power.resize(60, 60);
+    image(Power, 0, 0);
+    
+    //Display the Mian menu
     mainMenu.displayMenu();
+    //Display the slected functionality
+    if(clock.clockFaceMode == true){
+      //Clock is selected
+      
+      //Display day of the week
     
-    if (hours >= 12){           
-      mainMenu.setTimeOfDay(false);
+      radius = clock.getRadius();
+  
+      /** Check if clock rolls over from AM/PM */
+      seconds = second() + secDiff;
+      //System.out.println(seconds);
+      date.displayDateCalendar();
+      
+      if (seconds%60==0){
+        minutes++;
+      }
+      if(minutes == 60)
+      {
+         minutes=0; 
+      }
+      if (minutes %60==0){
+        hours++;
+      }
+      
+      if (hours == 24){
+        hours = 0;
+        date.incrementDay();
+      }
+      
+      if (hours >= 12){           
+        mainMenu.setTimeOfDay(false);
+      }
+      else if (hours < 12){
+        mainMenu.setTimeOfDay(true);
+      }
+  
+      /** Repeatedly prints the clock and its hands as they tick (12 & 24 mode) */
+      if (mainMenu.getView()) {
+  
+          clock.display12Hour(clock.getRadius(), currentDesign);
+          clock.displayAMPM(clock.getRadius(), currentDesign);
+          clock.display12Hands(clock.getRadius(), currentDesign);
+      }
+      else {
+  
+          clock.display24Hour(clock.getRadius(), currentDesign);
+          clock.display24Hands(clock.getRadius(), currentDesign);
+      }
     }
-    else if (hours < 12){
-      mainMenu.setTimeOfDay(true);
+    else if(stpWatch.stopWatchMode == true){
+      //StopWatch is selected
+      stpWatch.displayStopWatch();
     }
-
-    /** Repeatedly prints the clock and its hands as they tick (12 & 24 mode) */
-    if (mainMenu.getView()) {
-        clock.display12Hour(width,height,radius, currentDesign);
-        clock.displayAMPM(radius, currentDesign);
-        clock.display12Hands(radius, currentDesign);
+    else if(timer.timerMode == true){
+      //Timer is selected
+      timer.displayTimer();
     }
-    else {
-        clock.display24Hour(width,height,radius, currentDesign);
-        clock.display24Hands(radius, currentDesign);
+    else if(power.powerMode == false){
+         power.displayOff(); 
     }
-
 }

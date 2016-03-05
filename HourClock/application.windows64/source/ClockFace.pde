@@ -7,35 +7,84 @@ int secDiff;
 *
 *
 * @author Ashley Hutton, Hannah Johnson, Rabel Marte
+* @author Added Functionality by: Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
 */
 public class ClockFace {
+  //keep tack of which mode is selected.
+  //By default set the clock to display.
+  boolean clockFaceMode = true;
+  
   /** ---data members--- */
 
   /** related to clock */
   int m_xpos;
   int m_ypos;
   int m_radius;
-
+  int c_radius=600;
   /** 
-    @pre: none
-    @post: none
-    @return: none
+    @pre none
+    @post none
+    @return none
   */
   ClockFace(){
 
-
   }
-
   /** 
-    @pre: valid integers called xpos, ypox, radius, and valid enumerated type called cDesigns
-    @post: displays valid 12 hour clock face
-    @return: none
+    @pre none
+    @post none
+    @return value of clock radius
   */
-  public void display12Hour(int xpos, int ypos, int radius, clockDesigns cDesigns) {
+  public int getRadius()
+  {
+    return c_radius;
+  }
+  /** 
+    @pre Zoom in button pressed
+    @post Increments radius
+    @return none
+  */
+  public void addRadius()
+  {
+    if(c_radius==600)
+    {
+      c_radius=600;
+    }
+    else
+    {
+      c_radius=radius+50;
+    }
+      
+  }
+  /** 
+    @pre Zoom out button pressed
+    @post decrements radius
+    @return none
+  */
+  public void subRadius()
+  {
+    if(c_radius==300)
+    {
+      c_radius=300;
+    }
+    else
+    {
+      c_radius=radius-50;
+    }
+      
+  }
+  /** 
+    @pre valid integers called xpos, ypox, radius, and valid enumerated type called cDesigns
+    @post displays valid 12 hour clock face
+    @return none
+  */
+  public void display12Hour(int radius, clockDesigns cDesigns) {
 
     /** load picture with 1-12 clockface */
      PImage hands12;
      hands12 = loadImage("hands12.png");
+    int shifts= (600-radius)/2;
+     
+     
      
      /** check which face the user desires, load image accordingly */
      if(cDesigns == clockDesigns.BLACK) { hands12 = loadImage("hands12.png"); }
@@ -48,18 +97,19 @@ public class ClockFace {
      /** resize photo to size of clock and move
      to same location as clock */
      hands12.resize(radius, radius);
-     image(hands12, 250, 60);
+     image(hands12, 250+shifts, 50+shifts);
     
   }
 
   /** 
-    @pre: valid integers called xpos, ypox, radius, and valid enumerated type called cDesigns
-    @post: displays valid 24 hour clock face
-    @return: none
+    @pre valid integers called xpos, ypox, radius, and valid enumerated type called cDesigns
+    @post displays valid 24 hour clock face
+    @return none
   */
-  public void display24Hour(int xpos, int ypos, int radius, clockDesigns cDesigns) {
+  public void display24Hour(int radius, clockDesigns cDesigns) {
     /** load picture with 1-24 clockface */
     PImage hands24;
+    int shifts= (600-radius)/2;
     hands24 = loadImage("hands24.png");
     
      /** check which face the user desires, load image accordingly */
@@ -72,20 +122,22 @@ public class ClockFace {
     /** resize photo to size of clock and move
     to same location as clock */
     hands24.resize(radius, radius);
-    image(hands24, 250, 60);
+    image(hands24, 250+shifts, 50+shifts);
 
   }
 
   /** 
-    @pre: valid int called radius and valid enumerated type called cDesigns
-    @post: displays the correct hands for the 12 hour clock
-    @return: none
+    @pre valid int called radius and valid enumerated type called cDesigns
+    @post displays the correct hands for the 12 hour clock
+    @return none
   */
   public void display12Hands(int radius, clockDesigns cDesigns) {
 
     /** Origin of the clock */
-    float centerX = width/2;
-    float centerY = height/2 - 43;
+    float centerX = 550;
+    float centerY = 350;
+    float xAdjust=0;
+    float yAdjust=0;
 
     /** coorelates time (seconds, minutes, hours) to radians)
     Subtract 1/2 PI so that 12 pm starts at 90 degrees instead of at 0 degrees (3 pm)
@@ -121,16 +173,17 @@ public class ClockFace {
   }
 
   /** 
-    @pre: valid int called radius and valid enumerated type called cDesigns
-    @post: displays the correct hands for the 24 hour clock
-    @return: none
+    @pre valid int called radius and valid enumerated type called cDesigns
+    @post displays the correct hands for the 24 hour clock
+    @return none
   */
   public void display24Hands(int radius, clockDesigns cDesigns) {
 
     /** Origin of the clock */
-    float centerX = width/2;
-    float centerY = height/2 - 43;
-
+    float centerX = 550;
+    float centerY = 350;
+    float xAdjust= 0;
+    float yAdjust= 0;
     /** The corresponding radius of each hand */
     float sRad = radius * .4;
     float mRad = radius * .3;
@@ -166,9 +219,9 @@ public class ClockFace {
 
 
   /** 
-    @pre: none
-    @post: calculates the difference between the user requested and current time
-    @return: none
+    @pre none
+    @post calculates the difference between the user requested and current time
+    @return none
   */
   public void calcDiff() {
     /** If after 12 pm, clock is treated as in 24 hour mode */
@@ -184,9 +237,9 @@ public class ClockFace {
   }
   
    /** 
-    @pre: valid int called radius and valid enumerated type called cDesigns
-    @post: displays "AM" or "PM" on 12 hour clock depending on time
-    @return: none
+    @pre valid int called radius and valid enumerated type called cDesigns
+    @post displays "AM" or "PM" on 12 hour clock depending on time
+    @return none
   */
   public void displayAMPM(int radius, clockDesigns cDesigns) {
     /**load am and pm photos */
@@ -205,7 +258,7 @@ public class ClockFace {
       else if(cDesigns == clockDesigns.PIZZA) { am = loadImage("AM.png"); }
      
       am.resize(48, 34);
-      image(am, radius + 70, radius - 135);
+      image(am, 530, 370);
     }
     else {
 
@@ -218,7 +271,7 @@ public class ClockFace {
       
       
       pm.resize(48, 34);
-      image(pm, radius + 70, radius - 135);
+      image(pm, 530, 370);
     }
   }     
 }
