@@ -1,3 +1,8 @@
+/** Power class handles the turning on and off of the display
+*
+*
+* @author Functionality by: Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
+*/
 public class Power{
    
   boolean powerMode = true;

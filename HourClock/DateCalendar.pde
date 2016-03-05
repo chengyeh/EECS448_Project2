@@ -1,3 +1,8 @@
+/** DateCalendar adds the day of the week to the clock face
+*
+*
+* @author Functionality by: Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
+*/
 import java.util.GregorianCalendar;
 
 import static javax.swing.JOptionPane.*;

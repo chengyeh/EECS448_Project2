@@ -1,3 +1,9 @@
+/** Stopwatch class handles the running of the stopWatch. The stopwatch can start,stop and reset. 
+*
+*
+* @author Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
+*/
+
 public class StopWatch {
   //keep tack of which mode is selected.
   boolean stopWatchMode = false;
@@ -12,7 +18,11 @@ public class StopWatch {
   int startTime = 0;
   int counter;
   int fontSize=100;
-  
+  /** 
+    @pre none
+    @post Stopwatch starts decrementing
+    @return none
+  */
   public void startStopWatch()
   {
     SW_Start = true;
@@ -21,12 +31,20 @@ public class StopWatch {
     startTime = millis();
     counter = SW_Milliseconds;
   }
-  
+  /** 
+    @pre Stop button is pressed
+    @post Stopwatch stops 
+    @return none
+  */
   public void stopStopWatch()
   {
      SW_Stop = true;
   }
-  
+    /** 
+    @pre reset button is pressed
+    @post Reset to inital time.
+    @return none
+  */
   public void resetStopWatch()
   {
     SW_Reset = true;
@@ -34,6 +52,11 @@ public class StopWatch {
     SW_Start = false;
     startTime = millis();
   }
+    /** 
+    @pre Zoom out button is pressed
+    @post fontSize is increased by 10
+    @return none
+  */
   public void addSWSize()
   {
     if(fontSize==100)
@@ -46,7 +69,11 @@ public class StopWatch {
     }
       
   }
-  
+  /** 
+    @pre Zoom in button is pressed
+    @post fontSize is decreased by 10
+    @return none
+  */
   public void subSWSize()
   {
     if(fontSize==50)
@@ -59,7 +86,12 @@ public class StopWatch {
     }
       
   }
-   //Stopwatch Display function
+  
+  /** 
+    @pre none
+    @post display the StopWatch
+    @return none
+  */
   public void displayStopWatch()
   {
     //TODO

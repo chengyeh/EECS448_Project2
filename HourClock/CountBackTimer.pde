@@ -1,3 +1,8 @@
+/** CountBackTimer classes produces functionality to set, reset and pause a backwards counting clock
+*
+*
+* @author Functionality by: Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
+*/
 import java.util.Timer;
 import java.util.TimerTask;
 import static javax.swing.JOptionPane.*;

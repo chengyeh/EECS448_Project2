@@ -5,6 +5,7 @@ import java.util.regex.*;
  *  set the time and 12hr vs 24hr mode
  *
  * @author Ashley Hutton, Hannah Johnson, Rabel Marte
+ * @author Functionality by: Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
  */
 public class Menu {
 
@@ -243,17 +244,12 @@ public class Menu {
          1) set time to set time to computer clock time if user first opens program
          2) do not change time if user has already been running clock */
         timeIsValid = true;
-<<<<<<< HEAD
-
         m_hour = 0;
         m_minute = 0;
         m_second = 0;
-=======
-        
         m_hour = hour() + hourDiff;
         m_minute = minute() + minDiff;
         m_second = second() + secDiff;
->>>>>>> 31e5f87faf1e3db99687f3cd1da1bb5464d30f28
       }
       else{
 

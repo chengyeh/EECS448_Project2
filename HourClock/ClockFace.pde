@@ -1,12 +1,13 @@
 
-//int hourDiff;
-//int minDiff;
-//int secDiff;
+int hourDiff;
+int minDiff;
+int secDiff;
 
 /** ClockFace controls the display of clock faces and hands, as well as the clock geometry/ticking
 *
 *
 * @author Ashley Hutton, Hannah Johnson, Rabel Marte
+* @author Added Functionality by: Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
 */
 public class ClockFace {
   //keep tack of which mode is selected.
