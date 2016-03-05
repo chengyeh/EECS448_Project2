@@ -1,7 +1,7 @@
 
-int hourDiff;
-int minDiff;
-int secDiff;
+//int hourDiff;
+//int minDiff;
+//int secDiff;
 
 /** ClockFace controls the display of clock faces and hands, as well as the clock geometry/ticking
 *
@@ -28,18 +28,20 @@ public class ClockFace {
   ClockFace(){
 
   }
-
   /** 
-    @pre valid integers called xpos, ypox, radius, and valid enumerated type called cDesigns
-    @post displays valid 12 hour clock face
-    @return none
+    @pre none
+    @post none
+    @return value of clock radius
   */
-  
   public int getRadius()
   {
     return c_radius;
   }
-  
+  /** 
+    @pre Zoom in button pressed
+    @post Increments radius
+    @return none
+  */
   public void addRadius()
   {
     if(c_radius==600)
@@ -52,7 +54,11 @@ public class ClockFace {
     }
       
   }
-  
+  /** 
+    @pre Zoom out button pressed
+    @post decrements radius
+    @return none
+  */
   public void subRadius()
   {
     if(c_radius==300)
@@ -65,7 +71,11 @@ public class ClockFace {
     }
       
   }
-  
+  /** 
+    @pre valid integers called xpos, ypox, radius, and valid enumerated type called cDesigns
+    @post displays valid 12 hour clock face
+    @return none
+  */
   public void display12Hour(int radius, clockDesigns cDesigns) {
 
     /** load picture with 1-12 clockface */

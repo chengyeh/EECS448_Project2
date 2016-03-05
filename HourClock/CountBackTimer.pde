@@ -22,7 +22,11 @@ public class CountBackTimer {
   private Matcher matchTimer;
   
   Timer timer;
-  
+  /** 
+    @pre Set Timer value button is pressed
+    @post checks for valid input. If valid, sets timing variables according to input.
+    @return none
+  */
   public void setTimerDailog(){
     /** checks if time is entered correctly */
     Boolean timerIsValid = false;
@@ -62,12 +66,20 @@ public class CountBackTimer {
     convertTimeInSeconds(hours, minutes, seconds);
   }//End of setTimerDailog()
   
-  //Covert user input time to seconds
+  /** 
+    @pre Obtain the hour minutes and second values after input
+    @post Multiplies to obtain total number of seconds
+    @return none
+  */
   public void convertTimeInSeconds(int hours, int minutes, int seconds){
     totalSeconds = (hours * 3600)+ (minutes * 60) + seconds;
   }
   
-  //Start timer
+  /** 
+    @pre Start Timer button is pressed
+    @post decrements totalSeconds at appropriate time intervals until zero
+    @return none
+  */
   public void startTimer(){ 
     //create timer object
     timer = new Timer();
@@ -86,13 +98,21 @@ public class CountBackTimer {
      }, 0, 1000);
   }
   
-  //Stop timer
+   /** 
+    @pre Stop Timer button is pressed
+    @post Cancels calling startTimer()
+    @return none
+  */
   public void stopTimer(){
     //Stop the timer schedule
     timer.cancel();
   }
   
-  //Reset timer
+   /** 
+    @pre Reset Timer button is pressed
+    @post Stops Timer and resets to inital value of reset timer
+    @return none
+  */
   public void resetTimer(){
     //Stop the timer schedule
     timer.cancel();
@@ -101,7 +121,11 @@ public class CountBackTimer {
     //Start the timer
     startTimer();
   }
-  
+  /** 
+    @pre Zoom in button is pressed
+    @post Increments text size to a max of 100
+    @return none
+  */
   public void addTSize()
   {
     if(fontSize==100)
@@ -114,7 +138,11 @@ public class CountBackTimer {
     }
       
   }
-  
+  /** 
+    @pre Zoom out button is pressed
+    @post decrements text size to a min of 50
+    @return none
+  */
   public void subTSize()
   {
     if(fontSize==50)
@@ -127,7 +155,11 @@ public class CountBackTimer {
     }
       
   }
-  //Timer Display function
+  /** 
+    @pre boolean value is set to true
+    @post displays the background for the CountBackTimer based on various local variables.
+    @return none
+  */
   public void displayTimer(){
     //Covert the total number seconds to hours, minutes, and seconds
     int displayHours = totalSeconds / 3600;

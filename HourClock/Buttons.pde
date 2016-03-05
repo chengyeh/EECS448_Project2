@@ -534,7 +534,11 @@ void update(int x, int y) {
     overTimerReset      = false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overPower(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -543,7 +547,11 @@ boolean overPower(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overClock(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -600,7 +608,11 @@ boolean overChangeFace(int x, int y, int width, int height)  {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overSetDate(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -609,7 +621,11 @@ boolean overSetDate(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overZoomIn(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -618,7 +634,11 @@ boolean overZoomIn(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overZoomOut(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -627,7 +647,11 @@ boolean overZoomOut(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overStopWatch(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -636,7 +660,11 @@ boolean overStopWatch(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overStopWatchStart(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -645,7 +673,11 @@ boolean overStopWatchStart(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overStopWatchStop(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -654,7 +686,11 @@ boolean overStopWatchStop(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overStopWatchReset(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -663,7 +699,11 @@ boolean overStopWatchReset(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overTimer(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -672,7 +712,11 @@ boolean overTimer(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overTimerStart(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -681,7 +725,11 @@ boolean overTimerStart(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overTimerStop(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
@@ -690,7 +738,11 @@ boolean overTimerStop(int x, int y, int width, int height) {
     return false;
   }
 }
-
+/**
+*  @pre valid integers called x, y, width, and height
+*  @post check if change mode is clicked
+*  @return true if the button is clicked
+*/
 boolean overTimerReset(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width &&
       mouseY >= y && mouseY <= y+height) {
