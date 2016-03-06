@@ -80,10 +80,7 @@ public void draw() {
     mainMenu.displayMenu();
     //Display the slected functionality
     if(clock.clockFaceMode == true){
-      //Clock is selected
-      
-      //Display day of the week
-    
+      //Set radius
       radius = clock.getRadius();
   
       /** Check if clock rolls over from AM/PM */
@@ -1365,18 +1362,26 @@ public class CountBackTimer {
 * @author Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
 */
 
- 
-  public class DateCalendar {
+public class DateCalendar {
+  //Variables for user input
   private int year = 0;
   private int month = 0;
   private int day = 0;
   
+  //Variables patterm matching
   private Pattern patternDate;
   private Matcher matchDate;
   
+  //Create instance of java.util GregorianCalendar
+  GregorianCalendar calendar = new GregorianCalendar();
+  
+/** 
+  @pre none
+  @post none
+  @return none
+*/ 
   DateCalendar(){}
   
-  GregorianCalendar calendar = new GregorianCalendar();
  /** 
     @pre inputDate
     @post none
@@ -2149,7 +2154,7 @@ public class StopWatch {
 }
   public void settings() {  size(1100, 1120); }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "--present", "--window-color=#666666", "--stop-color=#cccccc", "HourClock" };
+    String[] appletArgs = new String[] { "HourClock" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

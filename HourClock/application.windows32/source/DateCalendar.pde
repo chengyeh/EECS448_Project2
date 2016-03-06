@@ -13,18 +13,26 @@ import java.util.regex.*;
 * @author Paul Charles, Purna Doddapaneni, Dilesh Fernando, Cheng-yeh Lee
 */
 
- 
-  public class DateCalendar {
+public class DateCalendar {
+  //Variables for user input
   private int year = 0;
   private int month = 0;
   private int day = 0;
   
+  //Variables patterm matching
   private Pattern patternDate;
   private Matcher matchDate;
   
+  //Create instance of java.util GregorianCalendar
+  GregorianCalendar calendar = new GregorianCalendar();
+  
+/** 
+  @pre none
+  @post none
+  @return none
+*/ 
   DateCalendar(){}
   
-  GregorianCalendar calendar = new GregorianCalendar();
  /** 
     @pre inputDate
     @post none

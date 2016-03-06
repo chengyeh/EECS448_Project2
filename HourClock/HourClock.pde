@@ -54,10 +54,7 @@ void draw() {
     mainMenu.displayMenu();
     //Display the slected functionality
     if(clock.clockFaceMode == true){
-      //Clock is selected
-      
-      //Display day of the week
-    
+      //Set radius
       radius = clock.getRadius();
   
       /** Check if clock rolls over from AM/PM */
