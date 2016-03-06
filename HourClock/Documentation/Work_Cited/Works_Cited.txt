@@ -1,0 +1,26 @@
+Works Cited
+———————————
+
+
+Using the Timer and TimerTask Classes: http://www.iitk.ac.in/esc101/05Aug/tutorial/essential/threads/timer.html
+	-Reference for CountBackTimer class implementation
+	-Reference for DateCalendar class implementation:
+	Calendar calendar = Calendar.getInstance();
+	calendar.set(Calendar.HOUR_OF_DAY, 23);
+	calendar.set(Calendar.MINUTE, 1);
+	calendar.set(Calendar.SECOND, 0);
+	Date time = calendar.getTime();
+
+
+Processing Forum: https://processing.org/discourse/beta/num_1249668498.html
+	-Reference for StopWatch class implementation:
+	 seconds = (millis() - startingTime) / 1000;
+	 minutes = seconds / 60;
+	 hours = minutes/60;
+	 seconds-=minutes * 60;
+	 minutes-=hours * 60;
+
+
+Processing Reference: https://processing.org/reference/
+	-Reference for Processing built in functions
+	
